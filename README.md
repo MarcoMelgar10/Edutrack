@@ -34,7 +34,13 @@ It is a portfolio and learning project that applies Java, JavaFX, Spring Boot, P
 - **Export** a goal's notes (Markdown), cards and results (CSV) from the goal menu.
 - **Templates**: seven built-in goal templates (English and Spanish), "New goal from template", "Save as template", and template file import/export.
 - **Windows integration**: tray icon, minimize to tray, reminder notifications and start with Windows (all optional, in Settings).
-- **Installer**: `mvn -P installer -pl edutrack-desktop -am package -DskipTests` builds an MSI with jpackage (needs the WiX Toolset). For a portable folder use `-Dinstaller.type=app-image "-Dinstaller.extraArgs="`; the result is in `edutrack-desktop/target/installer`.
+- **Installer**: `mvn -P installer -pl edutrack-desktop -am package -DskipTests` builds an MSI with jpackage (needs WiX Toolset 3.x; JDK 23 does not support WiX 4+). For a portable folder use `-Dinstaller.type=app-image "-Dinstaller.extraArgs="`; the result is in `edutrack-desktop/target/installer`.
+- **Release for sharing**: `scripts\build-release.ps1` puts everything to send in `release\`:
+  - `EduTrack-0.1.0.msi`: per-user install to `%LOCALAPPDATA%\EduTrack`, with a Start menu entry and a desktop shortcut; newer MSIs upgrade in place.
+  - `EduTrack.mcpb`: a Claude Desktop extension with an `open_edutrack` tool, so Claude can start the app (source in `claude-extension/`).
+  - `INSTALL.txt`: the steps for recipients. They install PostgreSQL 18, then run `first-run.cmd` from `%LOCALAPPDATA%\EduTrack\app` to create the database and the configuration file.
+
+  Windows does not let installers pin apps to the taskbar. Right-click EduTrack in Start and choose **Pin to taskbar**.
 
 A desktop shortcut can point to `scripts\run-edutrack.cmd` (run minimized) with the icon `edutrack-desktop\src\main\resources\icons\app-icon.ico`.
 

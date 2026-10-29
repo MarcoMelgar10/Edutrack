@@ -1,0 +1,32 @@
+{
+  "manifest_version": "0.2",
+  "name": "edutrack",
+  "display_name": "EduTrack",
+  "version": "0.1.0",
+  "description": "Open the EduTrack desktop app from Claude Desktop.",
+  "long_description": "Adds an 'open_edutrack' tool so you can ask Claude to start EduTrack, the desktop app for planning and tracking learning goals. EduTrack itself must be installed with EduTrack-0.1.0.msi.",
+  "author": {
+    "name": "Marco Melgar"
+  },
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/server/index.js"]
+    }
+  },
+  "tools": [
+    {
+      "name": "open_edutrack",
+      "description": "Open the EduTrack desktop app on this computer."
+    }
+  ],
+  "compatibility": {
+    "platforms": ["win32"],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}

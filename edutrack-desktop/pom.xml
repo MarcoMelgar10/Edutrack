@@ -120,7 +120,8 @@
     <profiles>
         <!--
             Windows installer. Run: mvn -P installer -pl edutrack-desktop -am package -DskipTests
-            Needs the WiX Toolset (https://wixtoolset.org) on the PATH for the msi/exe types.
+            Needs WiX Toolset 3.x (https://wixtoolset.org) on the PATH for the msi/exe types (JDK 23 jpackage does not support WiX 4+).
+            scripts/build-release.ps1 runs this and collects the MSI and the Claude extension into release/.
             Without WiX, build a runnable folder instead: -Dinstaller.type=app-image -Dinstaller.extraArgs=
             Output: edutrack-desktop/target/installer
         -->
@@ -130,7 +131,8 @@
                 <installer.type>msi</installer.type>
                 <installer.version>0.1.0</installer.version>
                 <!-- only valid for msi/exe; app-image builds pass -Dinstaller.extraArgs= (empty) -->
-                <installer.extraArgs>--win-menu --win-shortcut --win-dir-chooser --win-per-user-install</installer.extraArgs>
+                <!-- never change the upgrade UUID: it lets a newer MSI replace an older installation -->
+                <installer.extraArgs>--win-menu --win-menu-group EduTrack --win-shortcut --win-dir-chooser --win-per-user-install --win-upgrade-uuid 2c31a52c-55c9-4c94-9975-cf69ed5ee681</installer.extraArgs>
             </properties>
             <build>
                 <plugins>
@@ -153,6 +155,11 @@
                                         <mkdir dir="${project.build.directory}/installer-input"/>
                                         <copy file="${project.build.directory}/${project.build.finalName}.jar"
                                               todir="${project.build.directory}/installer-input"/>
+                                        <!-- database setup for recipients; installed next to the jar in <install dir>\app -->
+                                        <copy todir="${project.build.directory}/installer-input">
+                                            <fileset dir="${project.basedir}/../scripts"
+                                                     includes="setup-db.sql,first-run.ps1,first-run.cmd,INSTALL.txt"/>
+                                        </copy>
                                         <exec executable="${java.home}/bin/jpackage" failonerror="true">
                                             <arg value="--type"/>
                                             <arg value="${installer.type}"/>
@@ -162,6 +169,8 @@
                                             <arg value="${installer.version}"/>
                                             <arg value="--vendor"/>
                                             <arg value="EduTrack"/>
+                                            <arg value="--description"/>
+                                            <arg value="Plan and track your learning goals"/>
                                             <arg value="--input"/>
                                             <arg value="${project.build.directory}/installer-input"/>
                                             <arg value="--main-jar"/>

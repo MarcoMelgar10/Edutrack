@@ -1,0 +1,22 @@
+EduTrack - installation guide (Windows 10/11)
+=============================================
+
+1. Install PostgreSQL 18 (once). In a terminal:
+       winget install --id PostgreSQL.PostgreSQL.18 --interactive
+   Remember the password you choose for the "postgres" user.
+
+2. Install EduTrack: double-click EduTrack-0.1.0.msi.
+   No administrator rights are needed. It installs to %LOCALAPPDATA%\EduTrack and adds
+   a Start menu entry and a desktop shortcut.
+
+3. Set up the database (once): open %LOCALAPPDATA%\EduTrack\app and double-click first-run.cmd.
+   It asks for a new password for EduTrack's database user, then the postgres password.
+
+4. Pin EduTrack to the taskbar: open Start, right-click EduTrack, choose "Pin to taskbar".
+   (Windows does not let installers pin apps automatically.)
+
+5. Optional - open EduTrack from Claude Desktop: double-click EduTrack.mcpb (or Claude Desktop >
+   Settings > Extensions > Install extension) and ask Claude to "open EduTrack".
+
+Data, configuration and logs live in %USERPROFILE%\.edutrack.
+Uninstall from Settings > Apps > Installed apps > EduTrack (your data is kept).

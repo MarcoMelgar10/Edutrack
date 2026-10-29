@@ -9,3 +9,8 @@ Thumbs.db
 
 # Claude Code agent worktrees
 .claude/worktrees/
+
+# Release build output (scripts/build-release.ps1)
+release/
+*.mcpb
+claude-extension/icon.png
