@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s https://repo1.maven.org/maven2/org/fxmisc/richtext/richtextfx/maven-metadata.xml)"
+    ]
+  }
+}

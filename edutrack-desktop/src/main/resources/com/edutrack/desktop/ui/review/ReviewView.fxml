@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.edutrack.desktop.ui.markdown.MarkdownView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- The Review page: three states on top of each other (start, session, summary); the controller shows one. -->
+<StackPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+           fx:id="root" fx:controller="com.edutrack.desktop.ui.review.ReviewController"
+           styleClass="review-page">
+
+    <ScrollPane fx:id="startPane" fitToWidth="true" styleClass="page-scroll">
+        <VBox styleClass="page" spacing="16">
+            <padding>
+                <Insets top="24" right="32" bottom="24" left="32"/>
+            </padding>
+
+            <Label text="%nav.review" styleClass="text-title"/>
+            <Label text="%review.hint" styleClass="text-caption" wrapText="true"/>
+
+            <VBox styleClass="review-start" spacing="18" maxWidth="520">
+                <VBox spacing="6">
+                    <Label text="%review.scope" styleClass="form-label"/>
+                    <ComboBox fx:id="scopeBox" maxWidth="Infinity"/>
+                </VBox>
+
+                <VBox fx:id="waitingBox" spacing="6">
+                    <Label fx:id="countsLabel" styleClass="review-counts"/>
+                    <Label fx:id="limitsLabel" styleClass="text-caption" wrapText="true"/>
+                    <HBox>
+                        <padding>
+                            <Insets top="10"/>
+                        </padding>
+                        <Button fx:id="startButton" text="%review.start" styleClass="accent" onAction="#start">
+                            <tooltip>
+                                <Tooltip text="%review.start.tooltip"/>
+                            </tooltip>
+                        </Button>
+                    </HBox>
+                </VBox>
+
+                <VBox fx:id="emptyBox" spacing="4">
+                    <Label text="%review.empty" styleClass="text-heading" wrapText="true"/>
+                    <Label fx:id="nextDueLabel" styleClass="text-caption" wrapText="true"/>
+                    <Label fx:id="limitsEmptyLabel" styleClass="text-caption" wrapText="true"/>
+                </VBox>
+            </VBox>
+        </VBox>
+    </ScrollPane>
+
+    <VBox fx:id="sessionPane" styleClass="review-session" spacing="14" alignment="TOP_CENTER">
+        <padding>
+            <Insets top="24" right="32" bottom="24" left="32"/>
+        </padding>
+
+        <HBox styleClass="review-width" alignment="CENTER_LEFT" spacing="12">
+            <Label fx:id="progressLabel" styleClass="progress-value"/>
+            <Label fx:id="captionLabel" styleClass="text-caption" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            <Button fx:id="endButton" text="%review.end" styleClass="flat" onAction="#endSession">
+                <tooltip>
+                    <Tooltip text="%review.end.tooltip"/>
+                </tooltip>
+            </Button>
+        </HBox>
+
+        <ProgressBar fx:id="sessionProgress" styleClass="goal-progress, review-width" maxWidth="Infinity"/>
+
+        <ScrollPane fx:id="cardScroll" styleClass="review-card-scroll, review-width" fitToWidth="true"
+                    fitToHeight="true" VBox.vgrow="ALWAYS">
+            <VBox fx:id="reviewCard" styleClass="review-card" alignment="CENTER" spacing="18">
+                <Label fx:id="newLabel" text="%review.new" styleClass="review-new"/>
+                <MarkdownView fx:id="promptView" styleClass="review-text"/>
+                <Separator fx:id="answerSeparator" styleClass="review-hairline"/>
+                <MarkdownView fx:id="answerView" styleClass="review-text, review-answer"/>
+            </VBox>
+        </ScrollPane>
+
+        <StackPane styleClass="review-width" minHeight="56">
+            <Button fx:id="showAnswerButton" text="%review.showAnswer" styleClass="accent, review-show"
+                    maxWidth="Infinity" onAction="#reveal">
+                <tooltip>
+                    <Tooltip text="%review.showAnswer.tooltip"/>
+                </tooltip>
+            </Button>
+
+            <HBox fx:id="gradeBox" spacing="8">
+                <Button fx:id="againButton" styleClass="grade-button" maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                        onAction="#again">
+                    <graphic>
+                        <VBox alignment="CENTER" spacing="2">
+                            <Label text="%review.grade.again" styleClass="grade-name"/>
+                            <Label fx:id="againInterval" styleClass="grade-interval"/>
+                        </VBox>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%review.grade.again.tooltip"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="hardButton" styleClass="grade-button" maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                        onAction="#hard">
+                    <graphic>
+                        <VBox alignment="CENTER" spacing="2">
+                            <Label text="%review.grade.hard" styleClass="grade-name"/>
+                            <Label fx:id="hardInterval" styleClass="grade-interval"/>
+                        </VBox>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%review.grade.hard.tooltip"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="goodButton" styleClass="grade-button, accent" maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                        onAction="#good">
+                    <graphic>
+                        <VBox alignment="CENTER" spacing="2">
+                            <Label text="%review.grade.good" styleClass="grade-name"/>
+                            <Label fx:id="goodInterval" styleClass="grade-interval"/>
+                        </VBox>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%review.grade.good.tooltip"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="easyButton" styleClass="grade-button" maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                        onAction="#easy">
+                    <graphic>
+                        <VBox alignment="CENTER" spacing="2">
+                            <Label text="%review.grade.easy" styleClass="grade-name"/>
+                            <Label fx:id="easyInterval" styleClass="grade-interval"/>
+                        </VBox>
+                    </graphic>
+                    <tooltip>
+                        <Tooltip text="%review.grade.easy.tooltip"/>
+                    </tooltip>
+                </Button>
+            </HBox>
+        </StackPane>
+    </VBox>
+
+    <ScrollPane fx:id="summaryPane" fitToWidth="true" styleClass="page-scroll">
+        <VBox styleClass="page" spacing="16">
+            <padding>
+                <Insets top="24" right="32" bottom="24" left="32"/>
+            </padding>
+
+            <Label text="%review.summary.title" styleClass="text-title"/>
+            <Label text="%review.summary.hint" styleClass="text-caption" wrapText="true"/>
+
+            <HBox styleClass="review-stats" spacing="12">
+                <VBox styleClass="review-stat" spacing="4">
+                    <Label fx:id="cardsValue" styleClass="review-stat-value"/>
+                    <Label text="%review.summary.cards" styleClass="text-caption"/>
+                </VBox>
+                <VBox styleClass="review-stat" spacing="4">
+                    <Label fx:id="againValue" styleClass="review-stat-value"/>
+                    <Label text="%review.summary.again" styleClass="text-caption"/>
+                </VBox>
+                <VBox styleClass="review-stat" spacing="4">
+                    <Label fx:id="accuracyValue" styleClass="review-stat-value"/>
+                    <Label text="%review.summary.accuracy" styleClass="text-caption"/>
+                </VBox>
+                <VBox styleClass="review-stat" spacing="4">
+                    <Label fx:id="timeValue" styleClass="review-stat-value"/>
+                    <Label text="%review.summary.time" styleClass="text-caption"/>
+                </VBox>
+            </HBox>
+
+            <Label fx:id="logLabel" styleClass="text-caption" wrapText="true"/>
+            <Label fx:id="errorLabel" styleClass="form-error" wrapText="true"/>
+
+            <HBox spacing="8">
+                <Button fx:id="logButton" text="%review.log" styleClass="accent" onAction="#logTime">
+                    <tooltip>
+                        <Tooltip text="%review.log.tooltip"/>
+                    </tooltip>
+                </Button>
+                <Button fx:id="backButton" text="%review.back" onAction="#back"/>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+</StackPane>

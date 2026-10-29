@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.edutrack.desktop.ui.shell.PlaceholderController"
+      styleClass="page" spacing="8">
+    <padding>
+        <Insets top="24" right="32" bottom="24" left="32"/>
+    </padding>
+
+    <Label fx:id="titleLabel" styleClass="text-title"/>
+    <Label text="%shell.comingSoon" styleClass="text-caption"/>
+</VBox>

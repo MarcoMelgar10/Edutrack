@@ -1,0 +1,49 @@
+{
+  "id": "tech-certification",
+  "name": "Certificación tecnológica",
+  "description": "Prepárate para una certificación de un fabricante o del sector (nube, seguridad, redes, datos, gestión de proyectos...). Mapea los objetivos del examen, aprende cada dominio con laboratorios prácticos y termina con exámenes de práctica cronometrados.",
+  "durationWeeks": 12,
+  "weeklyTargetMinutes": 360,
+  "steps": [
+    { "title": "Lee la guía del examen y mapea los objetivos", "description": "Descarga la guía oficial del examen. Lista cada dominio con su peso y convierte cada objetivo en una casilla que puedas marcar.", "hours": 3 },
+    { "title": "Elige tus recursos y reserva el examen", "description": "Escoge un curso principal, una fuente de preguntas de práctica y la documentación oficial. Reserva la fecha del examen: un plazo hace real el plan.", "hours": 2 },
+    { "title": "Prepara un laboratorio práctico", "description": "Crea una cuenta gratuita o un entorno local de pruebas donde puedas construir, romper y volver a construir cosas sin riesgo.", "hours": 3 },
+    { "title": "Dominio 1: el de mayor peso", "description": "Estudia los conceptos y luego haz un laboratorio por cada objetivo. Escribe un resumen corto con tus propias palabras.", "hours": 14 },
+    { "title": "Dominio 2", "description": "Primero los conceptos, luego los laboratorios y después un cuestionario del dominio. Añade a tus tarjetas lo que fallaste.", "hours": 12 },
+    { "title": "Dominio 3", "description": "Primero los conceptos, luego los laboratorios y después un cuestionario del dominio. Añade a tus tarjetas lo que fallaste.", "hours": 12 },
+    { "title": "Dominios restantes", "description": "Cubre los dominios más ligeros. Dan más puntos por hora que las partes difíciles de los grandes.", "hours": 12 },
+    { "title": "Resúmenes de una página y tarjetas de datos", "description": "Condensa límites, valores por defecto, comandos, puertos y nombres de servicios en una página por dominio y en tarjetas.", "hours": 6 },
+    { "title": "Examen de práctica 1 y análisis de huecos", "description": "Haz un examen de práctica completo en condiciones reales. Por cada error anota a qué objetivo pertenece y por qué lo fallaste.", "hours": 5 },
+    { "title": "Refuerza los dominios débiles con laboratorios", "description": "Vuelve a los objetivos donde perdiste puntos. Repite el laboratorio sin mirar la guía.", "hours": 12 },
+    { "title": "Exámenes de práctica 2 y 3 en condiciones reales", "description": "Mismo tiempo límite, sin apuntes y sin pausas. Apunta a un margen claro sobre la nota de aprobado.", "hours": 6 },
+    { "title": "Logística del día del examen y último repaso", "description": "Revisa tu identificación, los requisitos del centro o de la supervisión en línea, y el trayecto. Repasa solo los resúmenes y duerme bien.", "hours": 3 }
+  ],
+  "competencies": [
+    { "name": "Conceptos fundamentales", "description": "Explicar qué hace cada servicio o tecnología, cuándo usarlo y qué compromisos implica.", "target": 4 },
+    { "name": "Habilidades prácticas", "description": "Construir y configurar cosas desde cero sin seguir un tutorial.", "target": 4 },
+    { "name": "Resolución de problemas", "description": "Diagnosticar por qué algo no funciona a partir de síntomas, registros y documentación.", "target": 3 },
+    { "name": "Seguridad y buenas prácticas", "description": "Aplicar por defecto el mínimo privilegio, el cifrado, la monitorización y el control de costes.", "target": 4 },
+    { "name": "Técnica de examen", "description": "Leer con cuidado las preguntas de escenario, descartar opciones incorrectas y gestionar el reloj.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Nota del examen de práctica", "unit": "%", "max": 100, "target": 80, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Técnica de examen" },
+    { "name": "Acierto en cuestionarios por dominio", "unit": "%", "max": 100, "target": 85, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE", "competency": "Conceptos fundamentales" }
+  ],
+  "routines": [
+    { "title": "Repaso de tarjetas", "cadence": "DAILY", "minutes": 15, "step": 7 },
+    { "title": "Sesión de laboratorio práctico", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 60, "step": 2 },
+    { "title": "Preguntas de práctica", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 30 }
+  ],
+  "cards": [
+    { "front": "¿Qué es el peso de un dominio en la guía del examen?", "back": "El porcentaje de preguntas del examen que proceden de ese dominio. Reparte tu tiempo de estudio más o menos en proporción." },
+    { "front": "¿Cómo se aborda una pregunta larga de escenario?", "back": "Lee primero la última frase para ver qué se pide, marca las restricciones (coste, seguridad, tiempo, escala) y descarta las opciones que las incumplen." },
+    { "front": "¿Por qué marcar una pregunta difícil y seguir adelante?", "back": "Los minutos que gastas en una pregunta difícil se pierden para varias fáciles. Márcala, termina el examen y vuelve con el tiempo que quede." },
+    { "front": "¿Qué significa mínimo privilegio?", "back": "Dar a cada usuario, servicio o proceso solo los permisos que necesita para hacer su trabajo, y nada más." },
+    { "front": "Alta disponibilidad frente a recuperación ante desastres", "back": "La alta disponibilidad mantiene un servicio funcionando pese a fallos de componentes (redundancia). La recuperación ante desastres restablece el servicio tras una caída grave (copias de seguridad, sitio alternativo)." },
+    { "front": "RTO frente a RPO", "back": "RTO (objetivo de tiempo de recuperación): cuánto tiempo puedes estar caído. RPO (objetivo de punto de recuperación): cuántos datos puedes perder, medido en tiempo." },
+    { "front": "Cifrado en reposo frente a cifrado en tránsito", "back": "En reposo protege los datos almacenados (discos, copias, bases de datos). En tránsito protege los datos que viajan por la red (TLS)." },
+    { "front": "Escalado vertical frente a horizontal", "back": "Vertical: dar más CPU o memoria a una máquina. Horizontal: añadir más máquinas detrás de un balanceador. El horizontal también mejora la disponibilidad." },
+    { "front": "¿Qué es el modelo de responsabilidad compartida?", "back": "El proveedor protege la plataforma; tú proteges lo que pones en ella: datos, identidades, configuración y accesos." },
+    { "front": "¿Por qué repetir un laboratorio sin la guía?", "back": "Seguir pasos demuestra que sabes leer. Repetirlo de memoria demuestra que sabes hacerlo, que es lo que miden las preguntas de escenario." }
+  ]
+}

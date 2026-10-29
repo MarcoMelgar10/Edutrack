@@ -1,0 +1,47 @@
+{
+  "id": "career-change",
+  "name": "Cambio de carrera",
+  "description": "Da el salto a un nuevo campo: aclara el puesto al que apuntas, cierra las brechas de habilidades, construye pruebas de tu trabajo y haz una búsqueda de empleo estructurada con práctica de entrevistas.",
+  "durationWeeks": 20,
+  "weeklyTargetMinutes": 480,
+  "steps": [
+    { "title": "Define el puesto objetivo y por qué", "description": "Investiga los puestos del nuevo campo: trabajo del día a día, rango salarial y vías de entrada. Elige uno o dos puestos objetivo y escribe por qué encajan contigo.", "hours": 8 },
+    { "title": "Análisis de brechas de habilidades", "description": "Reúne unas diez ofertas del puesto objetivo, lista las habilidades que piden y marca cuáles ya tienes, cuáles tienes a medias y cuáles te faltan.", "hours": 4 },
+    { "title": "Habla con personas que ya trabajan en el campo", "description": "Ten al menos cinco conversaciones cortas. Pregunta cómo es de verdad el trabajo, qué aprenderían primero y quién está contratando.", "hours": 6 },
+    { "title": "Plan de aprendizaje para las tres brechas principales", "description": "Elige las tres brechas que más se repiten y escoge un curso o un libro para cada una. Estúdialas por orden de importancia.", "hours": 40 },
+    { "title": "Proyecto de portafolio 1", "description": "Construye algo que resuelva un problema real del campo objetivo. Documenta el problema, tus decisiones y el resultado.", "hours": 40 },
+    { "title": "Proyecto de portafolio 2", "description": "Un segundo proyecto, distinto, que muestre variedad. Reutiliza lo aprendido y busca algo terminado antes que algo grande.", "hours": 30 },
+    { "title": "Reescribe tu CV, tu perfil y tu historia personal", "description": "Replantea tu experiencia anterior para el nuevo puesto. Escribe un CV de una página, un perfil en línea actualizado y una historia de dos minutos sobre por qué cambias.", "hours": 8 },
+    { "title": "Construye tu red de contactos y tu visibilidad", "description": "Únete a comunidades, asiste a eventos, comparte lo que aprendes y escribe a personas que trabajan donde te gustaría trabajar.", "hours": 10 },
+    { "title": "Preparación de entrevistas", "description": "Prepara historias para preguntas de comportamiento, repasa los temas técnicos del puesto e investiga cada empresa antes de cada entrevista.", "hours": 20 },
+    { "title": "Entrevistas de práctica con comentarios", "description": "Practica con un amigo, un mentor o grabándote. Pide opiniones sinceras sobre claridad, estructura y seguridad.", "hours": 8 },
+    { "title": "Haz la búsqueda de empleo", "description": "Postula por tandas, adapta cada candidatura, haz seguimiento a la semana y lleva un registro con fechas, contactos y próximos pasos.", "hours": 30 },
+    { "title": "Negocia y decide", "description": "Compara las ofertas por algo más que el sueldo: crecimiento, aprendizaje, equipo y estabilidad. Negocia con calma y con datos del mercado.", "hours": 4 }
+  ],
+  "competencies": [
+    { "name": "Habilidades del puesto", "description": "Las habilidades técnicas o profesionales que el puesto objetivo exige a diario.", "target": 4 },
+    { "name": "Evidencias en el portafolio", "description": "Trabajos terminados que demuestran que puedes hacer el trabajo.", "target": 4 },
+    { "name": "Entrevistas", "description": "Responder con claridad y con ejemplos estructurados, y hacer buenas preguntas a cambio.", "target": 4 },
+    { "name": "Red de contactos", "description": "Crear relaciones con personas del nuevo campo que puedan aconsejarte o recomendarte.", "target": 3 },
+    { "name": "Historia personal", "description": "Explicar de forma convincente por qué cambias y qué aportas de tu experiencia anterior.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Valoración de entrevista de práctica", "unit": "/10", "max": 10, "target": 8, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE", "competency": "Entrevistas" },
+    { "name": "Candidaturas enviadas", "unit": "candidaturas", "target": 30, "direction": "HIGHER_IS_BETTER", "combine": "SUM" }
+  ],
+  "routines": [
+    { "title": "Bloque de estudio de habilidades", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 60, "step": 3 },
+    { "title": "Contactos de networking", "cadence": "WEEKLY", "timesPerWeek": 2, "minutes": 30, "step": 7 },
+    { "title": "Bloque de búsqueda de empleo", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 45, "step": 10 }
+  ],
+  "cards": [
+    { "front": "¿Qué significa STAR en las respuestas de entrevista?", "back": "Situación, Tarea, Acción, Resultado. Describe brevemente el contexto, di qué tenías que hacer, explica qué hiciste y termina con el resultado medible." },
+    { "front": "¿Cómo estructurar el «Háblame de ti»?", "back": "Presente, pasado y futuro en menos de dos minutos: qué haces ahora, la experiencia que te trajo hasta aquí y por qué este puesto es el siguiente paso." },
+    { "front": "¿Cómo respondes a «¿Cuál es tu mayor debilidad?»?", "back": "Nombra una debilidad real y menor, muestra qué haces para mejorarla y da un ejemplo reciente de avance." },
+    { "front": "¿Quién debería decir primero la cifra del sueldo?", "back": "Idealmente, la empresa. Investiga antes el rango del mercado y, si te preguntan primero, responde con un rango basado en datos, no en tu último sueldo." },
+    { "front": "¿Qué debe incluir la descripción de un proyecto de portafolio?", "back": "El problema, tu papel, el enfoque y las decisiones, el resultado, qué mejorarías y un enlace a una demostración o al código." },
+    { "front": "Fórmula de una buena viñeta de CV", "back": "Verbo de acción + qué hiciste + resultado medible; por ejemplo: Reduje un 40 % el tiempo de preparación de informes automatizando la exportación mensual." },
+    { "front": "¿Qué preguntar en una entrevista informativa?", "back": "Cómo es una semana normal, qué les habría gustado saber al empezar, qué habilidades importan más y con quién más deberías hablar." },
+    { "front": "Buenas preguntas para el final de una entrevista", "back": "¿Cómo se ve el éxito en los primeros seis meses? ¿Cómo está organizado el equipo? ¿Cuál es el mayor reto ahora mismo?" }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "id": "new-programming-language",
+  "name": "Aprender un nuevo lenguaje de programación",
+  "description": "Aprende un lenguaje nuevo construyendo cosas reales: sintaxis, biblioteca estándar, herramientas, pruebas y un proyecto final completo. Sirve para cualquier lenguaje, de Rust a Python o Kotlin.",
+  "durationWeeks": 10,
+  "weeklyTargetMinutes": 360,
+  "steps": [
+    { "title": "Prepara las herramientas", "description": "Instala el compilador o el entorno de ejecución, un editor con soporte del lenguaje, un formateador, un linter y el gestor de paquetes. Ejecuta un Hola mundo y una primera prueba.", "hours": 3 },
+    { "title": "Recorrido por la sintaxis: variables, tipos y control de flujo", "description": "Sigue el tutorial oficial. Reescribe cada ejemplo en vez de pegarlo y cámbialo para ver qué se rompe.", "hours": 8 },
+    { "title": "Funciones, módulos y manejo de errores", "description": "Aprende cómo se reparte el código en archivos y paquetes, y cómo este lenguaje señala y maneja los errores.", "hours": 8 },
+    { "title": "Estructuras de datos y biblioteca estándar", "description": "Listas, mapas, conjuntos, cadenas, fechas, archivos y JSON. Descubre qué te da ya la biblioteca estándar antes de buscar un paquete.", "hours": 10 },
+    { "title": "Sistema de tipos y modelo de objetos", "description": "Clases, interfaces, traits, genéricos o lo que use este lenguaje para modelar las cosas, y en qué se diferencia de los que ya conoces.", "hours": 10 },
+    { "title": "Modismos y estilo", "description": "Lee la guía de estilo oficial y el código de un proyecto respetado. Anota qué hacen distinto los desarrolladores con experiencia.", "hours": 6 },
+    { "title": "Pruebas y depuración", "description": "Escribe pruebas unitarias para tus ejercicios, aprende el depurador y el perfilador, y mide la cobertura.", "hours": 8 },
+    { "title": "Concurrencia o código asíncrono", "description": "Entiende el modelo que usa este lenguaje (hilos, async/await, goroutines, actores) y sus trampas clásicas.", "hours": 8 },
+    { "title": "Práctica con katas: resuelve problemas conocidos de nuevo", "description": "Resuelve otra vez unos quince problemas que ya sabes resolver en otro lenguaje. Después compara con soluciones idiomáticas.", "hours": 12 },
+    { "title": "Proyecto final: pequeño pero completo", "description": "Planifica, construye, prueba y documenta una herramienta o aplicación real. Publícala o muéstrasela a alguien.", "hours": 30 },
+    { "title": "Lee una biblioteca popular y revisa tu proyecto", "description": "Lee el código fuente de una biblioteca muy usada y refactoriza tu proyecto con lo que aprendas.", "hours": 6 }
+  ],
+  "competencies": [
+    { "name": "Sintaxis y tipos", "description": "Escribir código correcto en el lenguaje sin buscar lo básico.", "target": 4 },
+    { "name": "Biblioteca estándar", "description": "Saber qué ofrece la biblioteca estándar y usarla antes de añadir dependencias.", "target": 4 },
+    { "name": "Herramientas y pruebas", "description": "Compilar, probar, depurar, formatear y empaquetar proyectos con las herramientas del lenguaje.", "target": 4 },
+    { "name": "Estilo idiomático", "description": "Escribir código que otros desarrolladores de este lenguaje encuentren natural de leer.", "target": 3 },
+    { "name": "Construcción de proyectos", "description": "Diseñar y terminar un programa completo, no solo ejercicios.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Tiempo por kata", "unit": "min", "target": 30, "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Sintaxis y tipos" },
+    { "name": "Cobertura de pruebas", "unit": "%", "max": 100, "target": 80, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Herramientas y pruebas" }
+  ],
+  "routines": [
+    { "title": "Práctica diaria de programación", "cadence": "DAILY", "minutes": 30, "step": 8 },
+    { "title": "Leer código de un buen proyecto", "cadence": "WEEKLY", "timesPerWeek": 2, "minutes": 30, "step": 5 },
+    { "title": "Trabajar en el proyecto final", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 60, "step": 9 }
+  ],
+  "cards": [
+    { "front": "¿Qué es una clausura (closure)?", "back": "Una función junto con las variables del ámbito donde se creó, de modo que puede seguir usándolas aunque se llame desde otro lugar." },
+    { "front": "Pila (stack) frente a montículo (heap)", "back": "La pila guarda los marcos de las llamadas y los valores locales, que se reservan y liberan automáticamente en orden. El montículo guarda objetos que viven mientras algo los referencia o hasta que se liberan." },
+    { "front": "¿Por qué preferir datos inmutables?", "back": "No cambian por sorpresa: son más fáciles de razonar, seguros de compartir entre hilos y sencillos de probar." },
+    { "front": "¿Qué necesita toda función recursiva?", "back": "Un caso base que detenga la recursión y un paso que acerque cada llamada a ese caso base." },
+    { "front": "Complejidad temporal de la búsqueda binaria", "back": "O(log n), sobre datos ordenados: cada comparación reduce a la mitad el espacio de búsqueda restante." },
+    { "front": "¿Qué es una función pura?", "back": "Una función cuyo resultado depende solo de sus argumentos y que no tiene efectos secundarios. La misma entrada siempre da la misma salida." },
+    { "front": "¿Qué es una operación idempotente?", "back": "Una que se puede repetir con el mismo efecto que hacerla una sola vez; por ejemplo, asignar un valor, a diferencia de incrementarlo." },
+    { "front": "¿Qué es una condición de carrera?", "back": "Un error en el que el resultado depende del momento impredecible en que dos o más hilos o tareas acceden a un estado compartido." },
+    { "front": "Lenguajes compilados frente a interpretados", "back": "El código compilado se traduce a código máquina o bytecode antes de ejecutarse; el interpretado lo ejecuta otro programa línea a línea. Muchos lenguajes combinan ambos." },
+    { "front": "Semántica de valor frente a semántica de referencia", "back": "Con semántica de valor, asignar copia los datos. Con semántica de referencia, asignar copia un puntero y ambos nombres ven el mismo objeto." }
+  ]
+}

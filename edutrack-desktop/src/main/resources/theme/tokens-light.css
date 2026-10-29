@@ -1,0 +1,36 @@
+/*
+ * EduTrack design tokens — light.
+ * The ONLY place (with tokens-dark.css) where colors are defined. base.css consumes them.
+ * Graphite, super formal: neutrals carry the layout; the navy accent is reserved for
+ * selection, progress, focus, the primary button and status marks.
+ */
+.root {
+    -et-accent: #1E3A8A;
+    -et-accent-muted: rgba(30, 58, 138, 0.35);   /* focus ring */
+    -et-accent-subtle: rgba(30, 58, 138, 0.07);  /* selected rows / hover tint */
+    -et-on-accent: #FFFFFF;
+
+    -et-text: #111827;
+    -et-text-muted: #6B7280;
+    -et-border: #E5E7EB;
+    -et-background: #FFFFFF;
+    -et-surface: #F8F9FA;
+
+    -et-danger: #9B1C1C;                          /* delete confirmation only */
+}
+
+/* Highlight colours: tint behind edited text, ink for read-only text and the colour swatches. */
+.root {
+    -et-hl-yellow: rgba(250, 204, 21, 0.45);
+    -et-hl-yellow-ink: #A16207;
+    -et-hl-green: rgba(74, 222, 128, 0.35);
+    -et-hl-green-ink: #15803D;
+    -et-hl-blue: rgba(96, 165, 250, 0.35);
+    -et-hl-blue-ink: #1D4ED8;
+    -et-hl-pink: rgba(244, 114, 182, 0.35);
+    -et-hl-pink-ink: #BE185D;
+    -et-hl-orange: rgba(251, 146, 60, 0.38);
+    -et-hl-orange-ink: #C2410C;
+    -et-hl-purple: rgba(192, 132, 252, 0.35);
+    -et-hl-purple-ink: #7E22CE;
+}

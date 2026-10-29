@@ -1,0 +1,15 @@
+spring:
+  config:
+    import: optional:file:${user.home}/.edutrack/application.properties
+  datasource:
+    url: jdbc:postgresql://localhost:5432/edutrack_test
+    username: edutrack
+    # Every IT class caches its own context and pool; keep pools small so PostgreSQL's connection limit holds.
+    hikari:
+      maximum-pool-size: 2
+      minimum-idle: 0
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true

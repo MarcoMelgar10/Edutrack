@@ -1,0 +1,744 @@
+/*
+ * Styles of the features added after the first release (sessions, journal, insights, skills, review, ...).
+ * Same rule as base.css: no literal colors, only -et-* tokens; states use weight and icons, never new hues.
+ */
+
+/* ---------- Study session bar (docked at the bottom of the window) ---------- */
+.session-bar {
+    -fx-background-color: -et-surface;
+    -fx-border-color: -et-border transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+}
+
+.session-bar-title {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+.session-bar-title:hover {
+    -fx-underline: true;
+}
+
+.session-bar-phase {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-accent;
+}
+
+.session-bar-notice {
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text;
+}
+
+.session-elapsed {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 24px;
+    -fx-text-fill: -et-text;
+    -fx-min-width: 96px;
+    -fx-alignment: center-right;
+}
+
+.session-total {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text;
+}
+
+.session-minutes {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+    -fx-min-width: 64px;
+    -fx-alignment: center-right;
+}
+
+/* ---------- Goal page tabs (practice, skills, cards, evidence) ---------- */
+.goal-tab-body {
+    -fx-padding: 12 0 0 0;
+}
+
+.goal-tab-scroll,
+.goal-tab-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.goal-tab-scroll {
+    -fx-border-width: 0;
+}
+
+.practice-time {
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+.practice-pace {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+    -fx-graphic-text-gap: 8px;
+}
+
+/* Behind pace is said with weight and an icon, never with a new hue. */
+.practice-pace:behind {
+    -fx-font-family: "Inter SemiBold";
+}
+
+.routine-list {
+    -fx-spacing: 0;
+}
+
+.routine-row {
+    -fx-padding: 10 4 10 4;
+    -fx-border-color: transparent transparent -et-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.routine-title {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+.routine-mark {
+    -fx-icon-color: -et-text-muted;
+    -fx-icon-size: 16px;
+}
+
+.routine-week-met {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -et-accent;
+}
+
+/* ---------- Today ---------- */
+.streak-chip {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12.5px;
+    -fx-text-fill: -et-text;
+    -fx-graphic-text-gap: 6px;
+}
+
+.today-callout {
+    -fx-background-color: -et-surface;
+    -fx-border-color: -et-border;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 14 16 14 16;
+}
+
+.today-callout-title {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 13.5px;
+    -fx-text-fill: -et-text;
+}
+
+.today-overdue {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -et-text;
+    -fx-graphic-text-gap: 6px;
+}
+
+/* ---------- Journal ---------- */
+
+.journal-page {
+    -fx-background-color: -et-background;
+}
+
+.journal-list-pane {
+    -fx-border-color: transparent -et-border transparent transparent;
+    -fx-border-width: 0 1px 0 0;
+}
+
+.journal-cell {
+    -fx-padding: 10px 0 10px 0;
+}
+
+.journal-kind-icon {
+    -fx-icon-color: -et-text-muted;
+    -fx-icon-size: 15px;
+}
+
+/* A check-in's confidence: five dots, the felt level filled in the accent. */
+.confidence-dot {
+    -fx-min-width: 7px;
+    -fx-pref-width: 7px;
+    -fx-max-width: 7px;
+    -fx-min-height: 7px;
+    -fx-pref-height: 7px;
+    -fx-max-height: 7px;
+    -fx-background-color: transparent;
+    -fx-background-radius: 4px;
+    -fx-border-color: -et-text-muted;
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+}
+
+.confidence-dot:filled {
+    -fx-background-color: -et-accent;
+    -fx-border-color: -et-accent;
+}
+
+/* ---------- Skills: competencies and measures ---------- */
+.skill-list {
+    -fx-spacing: 0;
+}
+
+.level-bar {
+    -fx-alignment: center;
+    -fx-padding: 4;
+    -fx-cursor: hand;
+}
+
+.level-bar:focused {
+    -fx-border-color: -et-accent-muted;
+    -fx-border-radius: 3px;
+}
+
+.level-segment {
+    -fx-min-width: 22px;
+    -fx-pref-width: 22px;
+    -fx-max-width: 22px;
+    -fx-min-height: 8px;
+    -fx-pref-height: 8px;
+    -fx-max-height: 8px;
+    -fx-background-color: -et-border;
+    -fx-background-radius: 2px;
+}
+
+.level-segment-filled {
+    -fx-background-color: -et-accent;
+}
+
+/* The level aimed for is outlined, so it reads in either theme and without another color. */
+.level-segment-target {
+    -fx-border-color: -et-text;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 2px;
+}
+
+.skill-met {
+    -fx-icon-color: -et-accent;
+    -fx-icon-size: 16px;
+}
+
+.measure-latest {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+    -fx-min-width: 96px;
+    -fx-alignment: center-right;
+}
+
+.sparkline-line {
+    -fx-stroke: -et-accent;
+    -fx-stroke-width: 1.5px;
+    -fx-fill: transparent;
+}
+
+.sparkline-end {
+    -fx-fill: -et-accent;
+}
+
+/* ---------- Insights: charts and study-days calendar ---------- */
+.insights-chart {
+    -fx-background-color: transparent;
+    -fx-padding: 4 0 0 0;
+}
+
+.insights-chart .chart-plot-background {
+    -fx-background-color: transparent;
+}
+
+.insights-chart .axis {
+    -fx-tick-label-fill: -et-text-muted;
+    -fx-font-size: 11px;
+}
+
+.insights-chart .axis-label {
+    -fx-text-fill: -et-text-muted;
+    -fx-font-size: 11px;
+}
+
+.insights-chart .axis-tick-mark,
+.insights-chart .axis-minor-tick-mark,
+.insights-chart .chart-vertical-grid-lines {
+    -fx-stroke: transparent;
+}
+
+.insights-chart .chart-horizontal-grid-lines {
+    -fx-stroke: -et-border;
+}
+
+.insights-chart .axis:left,
+.insights-chart .axis:bottom {
+    -fx-border-color: -et-border;
+}
+
+/* Past weeks in the muted accent, the current week in the full accent. */
+.insights-chart .chart-bar {
+    -fx-bar-fill: -et-accent-muted;
+}
+
+.insights-chart .chart-bar.bar-current {
+    -fx-bar-fill: -et-accent;
+}
+
+.insights-chart .chart-series-line {
+    -fx-stroke: -et-accent;
+    -fx-stroke-width: 2px;
+}
+
+.insights-chart .chart-line-symbol {
+    -fx-background-color: -et-accent, -et-background;
+    -fx-background-insets: 0, 2;
+    -fx-background-radius: 5px;
+    -fx-padding: 4px;
+}
+
+.insights-chart .chart-series-line.target-line {
+    -fx-stroke: -et-text-muted;
+    -fx-stroke-width: 1.5px;
+    -fx-stroke-dash-array: 6 5;
+}
+
+.insights-chart .chart-line-symbol.target-symbol {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.insights-measure-title {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+.heat-label {
+    -fx-font-size: 10.5px;
+    -fx-text-fill: -et-text-muted;
+}
+
+.heat-cell {
+    -fx-background-radius: 2px;
+}
+
+.heat-0 {
+    -fx-background-color: -et-border;
+}
+
+.heat-1 {
+    -fx-background-color: -et-accent;
+    -fx-opacity: 0.30;
+}
+
+.heat-2 {
+    -fx-background-color: -et-accent;
+    -fx-opacity: 0.55;
+}
+
+.heat-3 {
+    -fx-background-color: -et-accent;
+    -fx-opacity: 0.78;
+}
+
+.heat-4 {
+    -fx-background-color: -et-accent;
+}
+
+/* ---------- Read-only notes: underline and highlight ---------- */
+.md-underline {
+    -fx-underline: true;
+}
+
+.md-highlight {
+    -fx-font-family: "Inter SemiBold";
+    -fx-fill: -et-hl-yellow-ink;
+}
+
+.md-highlight-yellow {
+    -fx-fill: -et-hl-yellow-ink;
+}
+
+.md-highlight-green {
+    -fx-fill: -et-hl-green-ink;
+}
+
+.md-highlight-blue {
+    -fx-fill: -et-hl-blue-ink;
+}
+
+.md-highlight-pink {
+    -fx-fill: -et-hl-pink-ink;
+}
+
+.md-highlight-orange {
+    -fx-fill: -et-hl-orange-ink;
+}
+
+.md-highlight-purple {
+    -fx-fill: -et-hl-purple-ink;
+}
+
+
+/* ---------- Note editor: one surface, formatted as you type ---------- */
+.note-editor {
+    -fx-background-color: -et-background;
+}
+
+.note-toolbar {
+    -fx-padding: 4 4 4 4;
+    -fx-background-color: -et-background;
+    -fx-border-color: transparent transparent -et-border transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.note-tool,
+.note-block-menu {
+    -fx-background-color: transparent;
+    -fx-background-radius: 3px;
+    -fx-padding: 5 7 5 7;
+    -fx-text-fill: -et-text;
+}
+
+.note-tool:hover,
+.note-block-menu:hover {
+    -fx-background-color: -et-accent-subtle;
+}
+
+.note-tool:selected {
+    -fx-background-color: -et-accent-muted;
+}
+
+.note-tool .ikonli-font-icon {
+    -fx-icon-size: 15px;
+    -fx-icon-color: -et-text;
+}
+
+.note-block-menu {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12.5px;
+    -fx-min-width: 128px;
+    -fx-alignment: center-left;
+}
+
+.note-separator {
+    -fx-padding: 0 4 0 4;
+}
+
+.note-glyph-strike {
+    -fx-font-family: "Inter SemiBold";
+    -fx-strikethrough: true;
+}
+
+.note-glyph-highlight {
+    -fx-font-family: "Inter SemiBold";
+    -fx-background-color: -et-hl-yellow;
+    -fx-padding: 0 3 0 3;
+}
+
+.note-highlight-menu {
+    -fx-padding: 5 2 5 2;
+}
+
+.note-highlight-menu > .arrow-button {
+    -fx-padding: 0;
+    -fx-pref-width: 0;
+}
+
+.hl-swatches {
+    -fx-padding: 4 6 4 6;
+}
+
+.hl-swatch {
+    -fx-background-radius: 10px;
+    -fx-border-color: -et-border;
+    -fx-border-radius: 10px;
+    -fx-min-width: 20px;
+    -fx-min-height: 20px;
+    -fx-pref-width: 20px;
+    -fx-pref-height: 20px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.hl-swatch:hover,
+.hl-swatch:focused {
+    -fx-border-color: -et-text;
+}
+
+.hl-swatch-yellow {
+    -fx-background-color: -et-hl-yellow-ink;
+}
+
+.hl-swatch-green {
+    -fx-background-color: -et-hl-green-ink;
+}
+
+.hl-swatch-blue {
+    -fx-background-color: -et-hl-blue-ink;
+}
+
+.hl-swatch-pink {
+    -fx-background-color: -et-hl-pink-ink;
+}
+
+.hl-swatch-orange {
+    -fx-background-color: -et-hl-orange-ink;
+}
+
+.hl-swatch-purple {
+    -fx-background-color: -et-hl-purple-ink;
+}
+
+
+.note-area {
+    -fx-background-color: -et-background;
+    -fx-font-family: "Inter";
+    -fx-font-size: 15px;
+    -fx-padding: 14 8 28 4;
+}
+
+.note-area .paragraph-text {
+    -fx-line-spacing: 4px;
+}
+
+.note-area .text {
+    -fx-fill: -et-text;
+}
+
+.note-area .caret {
+    -fx-stroke: -et-text;
+}
+
+.note-area .selection {
+    -fx-fill: -et-accent-muted;
+}
+
+.note-prompt {
+    -fx-text-fill: -et-text-muted;
+    -fx-font-size: 15px;
+    -fx-padding: 14 10 0 6;
+}
+
+/* Titles. */
+.note-area .md-h1-text {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 28px;
+}
+
+.note-area .md-h2-text {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 22px;
+}
+
+.note-area .md-h3-text {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 18px;
+}
+
+.note-area .paragraph-text.md-p-h1 {
+    -fx-padding: 14 0 4 0;
+}
+
+.note-area .paragraph-text.md-p-h2 {
+    -fx-padding: 12 0 3 0;
+}
+
+.note-area .paragraph-text.md-p-h3 {
+    -fx-padding: 10 0 2 0;
+}
+
+/* Emphasis. */
+.note-area .md-strong {
+    -fx-font-family: "Inter SemiBold";
+}
+
+.note-area .md-em {
+    -fx-font-family: "Inter";
+    -fx-font-style: italic;
+}
+
+.note-area .md-strong.md-em {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-style: italic;
+}
+
+.note-area .md-underline {
+    -fx-underline: true;
+}
+
+.note-area .md-strike {
+    -fx-strikethrough: true;
+    -fx-fill: -et-text-muted;
+}
+
+.note-area .md-highlight {
+    -rtfx-background-color: -et-hl-yellow;
+    -fx-fill: -et-text;
+}
+
+.note-area .md-highlight-yellow {
+    -rtfx-background-color: -et-hl-yellow;
+}
+
+.note-area .md-highlight-green {
+    -rtfx-background-color: -et-hl-green;
+}
+
+.note-area .md-highlight-blue {
+    -rtfx-background-color: -et-hl-blue;
+}
+
+.note-area .md-highlight-pink {
+    -rtfx-background-color: -et-hl-pink;
+}
+
+.note-area .md-highlight-orange {
+    -rtfx-background-color: -et-hl-orange;
+}
+
+.note-area .md-highlight-purple {
+    -rtfx-background-color: -et-hl-purple;
+}
+
+
+.note-area .md-link {
+    -fx-fill: -et-accent;
+    -fx-underline: true;
+}
+
+.note-area .md-task-done-text {
+    -fx-fill: -et-text-muted;
+    -fx-strikethrough: true;
+}
+
+/* Code and tables. */
+.note-area .md-code-inline,
+.note-area .md-code-block,
+.note-area .md-table-text,
+.note-area .md-table-head,
+.note-area .md-table-rule {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 13.5px;
+}
+
+.note-area .md-code-inline {
+    -rtfx-background-color: -et-surface;
+}
+
+.note-area .md-table-head {
+    -fx-font-weight: bold;
+}
+
+.note-area .md-table-pipe,
+.note-area .md-table-rule {
+    -fx-fill: -et-text-muted;
+}
+
+.note-area .paragraph-text.md-p-code,
+.note-area .paragraph-text.md-p-table {
+    -fx-background-color: -et-surface;
+    -fx-padding: 0 8 0 8;
+}
+
+.note-area .paragraph-text.md-p-quote {
+    -fx-border-color: -et-border;
+    -fx-border-width: 0 0 0 3;
+    -fx-padding: 0 0 0 12;
+}
+
+.note-area .paragraph-text.md-p-rule {
+    -fx-border-color: transparent transparent -et-border transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 6 0 6 0;
+}
+
+/* Bullets, numbers and task boxes in the gutter. */
+.note-gutter {
+    -fx-alignment: center-right;
+}
+
+.note-bullet {
+    -fx-text-fill: -et-text;
+    -fx-font-size: 15px;
+}
+
+.note-number {
+    -fx-text-fill: -et-text-muted;
+    -fx-font-family: "Inter Medium";
+}
+
+/* Syntax markers: shown (muted) on the line being edited, collapsed everywhere else. Keep these last. */
+.note-area .md-mark-shown {
+    -fx-fill: -et-text-muted;
+}
+
+.note-area .md-mark-hidden {
+    -fx-font-size: 0.1px;
+    -fx-fill: transparent;
+}
+
+/* The / menu and the link popup. */
+.slash-menu {
+    -fx-background-color: -et-background;
+    -fx-border-color: -et-border;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 2;
+}
+
+.note-link-popup {
+    -fx-background-color: -et-background;
+    -fx-border-color: -et-border;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 6;
+}
+
+/* ---------- Search and quick search ---------- */
+.search-field {
+    -fx-font-size: 15px;
+    -fx-padding: 9 12 9 12;
+}
+
+.search-row {
+    -fx-padding: 8 4 8 4;
+}
+
+.search-snippet {
+    -fx-line-spacing: 2px;
+}
+
+.search-text {
+    -fx-font-size: 12px;
+    -fx-fill: -et-text-muted;
+}
+
+.search-hit-text {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 12px;
+    -fx-fill: -et-text;
+}
+
+.quick-search-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.35);
+}
+
+.quick-search-card {
+    -fx-background-color: -et-background;
+    -fx-border-color: -et-border;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 12;
+}
+
+.quick-search-list {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}

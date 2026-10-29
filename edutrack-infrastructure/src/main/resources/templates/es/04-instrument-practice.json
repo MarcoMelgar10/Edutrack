@@ -1,0 +1,47 @@
+{
+  "id": "instrument-practice",
+  "name": "Práctica de un instrumento musical",
+  "description": "Un plan de práctica constante para cualquier instrumento: sonido, técnica, lectura, ritmo, entrenamiento auditivo y repertorio. No tiene fecha de fin; es un hábito que crece contigo y se mide con el tiempo semanal de práctica.",
+  "weeklyTargetMinutes": 210,
+  "steps": [
+    { "title": "Prepara tu instrumento y tu espacio de práctica", "description": "Deja el instrumento en buen estado y afinado. Añade un metrónomo, un afinador, un atril, una grabadora y un lugar y una hora fijos para practicar.", "hours": 2 },
+    { "title": "Postura, forma de sostenerlo y sonido limpio", "description": "Aprende lo básico de postura, posición de las manos y producción del sonido, idealmente revisado por un profesor o con una clase en vídeo.", "hours": 6 },
+    { "title": "Lectura musical y teoría básica", "description": "Notas en el pentagrama, figuras rítmicas, compases y armaduras. Lee un poco cada día.", "hours": 10 },
+    { "title": "Escalas y arpegios en las primeras tonalidades", "description": "Empieza por las tonalidades más fáciles, despacio y con regularidad; luego amplía el rango y añade tonalidades de una en una.", "hours": 12 },
+    { "title": "Ritmo y control del tempo con metrónomo", "description": "Palmea y toca ritmos, subdivide el pulso y sube el tempo en pasos pequeños solo cuando el pasaje salga limpio.", "hours": 8 },
+    { "title": "Aprende tu primera pieza completa", "description": "Divide la pieza en secciones cortas, practica cada una despacio, únelas y toca la pieza entera de principio a fin.", "hours": 20 },
+    { "title": "Entrenamiento auditivo: intervalos, acordes y tocar de oído", "description": "Reconoce intervalos y tipos de acorde, canta antes de tocar y saca melodías sencillas sin partitura.", "hours": 10 },
+    { "title": "Grábate y pide opinión", "description": "Graba una interpretación completa, escúchala con sentido crítico y pide opinión a un profesor o a un músico con experiencia. Elige dos cosas que corregir.", "hours": 4 },
+    { "title": "Toca para alguien", "description": "Toca la pieza ante un amigo, un profesor o en una sesión abierta. Tocar en público muestra lo que la práctica oculta.", "hours": 6 }
+  ],
+  "competencies": [
+    { "name": "Técnica", "description": "Postura, sonido, precisión y economía de movimientos.", "target": 4 },
+    { "name": "Ritmo y tempo", "description": "Mantener un pulso estable y tocar con limpieza al tempo objetivo.", "target": 4 },
+    { "name": "Lectura musical", "description": "Leer y tocar notación a primera vista en un nivel cómodo.", "target": 3 },
+    { "name": "Oído musical", "description": "Reconocer de oído intervalos, acordes y melodías.", "target": 3 },
+    { "name": "Repertorio", "description": "Piezas que puedes tocar de memoria o sin detenerte.", "target": 4 },
+    { "name": "Expresión musical", "description": "Dinámica, fraseo y carácter: tocar música, no solo notas.", "target": 3 }
+  ],
+  "measures": [
+    { "name": "Tempo", "unit": "bpm", "target": 120, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Ritmo y tempo" },
+    { "name": "Errores por interpretación", "unit": "errores", "target": 2, "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Técnica" }
+  ],
+  "routines": [
+    { "title": "Calentamiento y escalas", "cadence": "DAILY", "minutes": 15, "step": 3 },
+    { "title": "Práctica concentrada del repertorio", "cadence": "WEEKLY", "timesPerWeek": 5, "minutes": 30, "step": 5 },
+    { "title": "Entrenamiento auditivo", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 10, "step": 6 }
+  ],
+  "cards": [
+    { "front": "Orden de los sostenidos en las armaduras", "back": "Fa, Do, Sol, Re, La, Mi, Si." },
+    { "front": "Orden de los bemoles en las armaduras", "back": "Si, Mi, La, Re, Sol, Do, Fa: los sostenidos al revés." },
+    { "front": "¿Cuántos semitonos tiene una quinta justa?", "back": "7 semitonos; por ejemplo, de Do a Sol." },
+    { "front": "Patrón de la escala mayor", "back": "Tono, tono, semitono, tono, tono, tono, semitono." },
+    { "front": "¿Qué significa un compás de 4/4?", "back": "Cuatro tiempos en cada compás, y la negra vale un tiempo." },
+    { "front": "Allegro, Andante, Adagio", "back": "Allegro: rápido y animado. Andante: a paso de caminata. Adagio: lento y reposado." },
+    { "front": "Matices dinámicos: p, mp, mf, f", "back": "Piano (suave), mezzo piano (moderadamente suave), mezzo forte (moderadamente fuerte), forte (fuerte)." },
+    { "front": "¿Cuál es el relativo menor de Do mayor?", "back": "La menor. Comparte la armadura y empieza en el sexto grado de la escala mayor." },
+    { "front": "Fórmula de un acorde mayor", "back": "Fundamental, tercera mayor (4 semitonos) y quinta justa (7 semitonos)." },
+    { "front": "Fórmula de un acorde menor", "back": "Fundamental, tercera menor (3 semitonos) y quinta justa (7 semitonos)." },
+    { "front": "¿Por qué practicar despacio?", "back": "La práctica lenta crea movimientos precisos y relajados que siguen funcionando cuando aceleras. La velocidad es el resultado de la práctica, no el método." }
+  ]
+}

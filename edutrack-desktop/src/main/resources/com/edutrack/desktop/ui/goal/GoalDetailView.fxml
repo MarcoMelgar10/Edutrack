@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- The goal page and, on top of it while a roadmap step is open, the step page (added in code). -->
+<StackPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+           fx:id="root" fx:controller="com.edutrack.desktop.ui.goal.GoalDetailController">
+<VBox fx:id="panel" styleClass="goal-detail" spacing="14">
+    <padding>
+        <Insets top="24" right="28" bottom="24" left="28"/>
+    </padding>
+
+    <HBox alignment="TOP_LEFT" spacing="8">
+        <Label fx:id="titleLabel" styleClass="text-title" wrapText="true" maxWidth="Infinity"
+               HBox.hgrow="ALWAYS"/>
+        <!-- minWidth -Infinity keeps the buttons at their natural width when a long title wraps. -->
+        <MenuButton fx:id="goalOptions" styleClass="icon-button, no-arrow" minWidth="-Infinity"
+                    accessibleText="%goal.options">
+            <tooltip>
+                <Tooltip text="%goal.options"/>
+            </tooltip>
+            <items>
+                <MenuItem text="%goal.export.notes" onAction="#exportNotes"/>
+                <MenuItem text="%goal.export.cards" onAction="#exportCards"/>
+                <MenuItem text="%goal.export.results" onAction="#exportResults"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="%goal.template.save" onAction="#saveAsTemplate"/>
+            </items>
+        </MenuButton>
+        <Button text="%common.edit" styleClass="flat" minWidth="-Infinity" onAction="#editGoal"/>
+        <Button text="%common.delete" styleClass="flat, danger-text" minWidth="-Infinity" onAction="#deleteGoal"/>
+    </HBox>
+
+    <!-- The outcome of the last export or template action; success reads as a caption, failure as an error. -->
+    <Label fx:id="actionStatusLabel" styleClass="text-caption" wrapText="true"/>
+
+    <Label fx:id="deadlineLabel" styleClass="text-caption"/>
+    <Label fx:id="descriptionLabel" styleClass="goal-description" wrapText="true"/>
+
+    <HBox styleClass="goal-progress-row" alignment="CENTER_LEFT" spacing="12">
+        <ProgressBar fx:id="progressBar" styleClass="goal-progress" maxWidth="Infinity" HBox.hgrow="ALWAYS"/>
+        <Label fx:id="progressLabel" styleClass="progress-value"/>
+        <Label fx:id="effortLabel" styleClass="text-caption"/>
+    </HBox>
+
+    <!-- The check icon is added in code, in front of the text. -->
+    <HBox fx:id="completionBanner" styleClass="completion-banner" alignment="CENTER_LEFT" spacing="8">
+        <Label fx:id="completionLabel"/>
+    </HBox>
+
+    <!-- Roadmap and Results are here; Practice, Skills, Cards and Evidence are added in code (GoalPanel beans). -->
+    <TabPane fx:id="goalTabs" styleClass="record-tabs" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <Tab fx:id="roadmapTab" text="%goal.tab.roadmap">
+            <VBox spacing="10" styleClass="goal-tab-body">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="%goal.roadmap.section" styleClass="section-label"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="addStepButton" text="%goal.roadmap.add" onAction="#addStep"/>
+                </HBox>
+
+                <ListView fx:id="timeline" styleClass="timeline" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <VBox alignment="CENTER" spacing="4">
+                            <Label text="%goal.roadmap.empty" styleClass="text-heading"/>
+                            <Label text="%goal.roadmap.emptyHint"
+                                   styleClass="text-caption" wrapText="true" maxWidth="360" textAlignment="CENTER"/>
+                        </VBox>
+                    </placeholder>
+                </ListView>
+            </VBox>
+        </Tab>
+        <Tab fx:id="resultsTab" text="%goal.tab.results">
+            <VBox spacing="10" styleClass="goal-tab-body">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="%goal.results.section" styleClass="section-label"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="addResultButton" text="%goal.results.add" onAction="#addResult"/>
+                </HBox>
+
+                <!-- Rebuilt from the goal's results on every change. -->
+                <ScrollPane fitToWidth="true" styleClass="goal-tab-scroll" VBox.vgrow="ALWAYS">
+                    <VBox fx:id="goalResults" styleClass="goal-results"/>
+                </ScrollPane>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>
+</StackPane>

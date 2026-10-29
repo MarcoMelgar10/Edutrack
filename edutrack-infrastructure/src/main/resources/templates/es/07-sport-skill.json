@@ -1,0 +1,43 @@
+{
+  "id": "sport-skill",
+  "name": "Deporte o habilidad física",
+  "description": "Aprende o perfecciona una habilidad física (un estilo de natación, escalada, el saque de tenis, patinaje, un arte marcial...): fundamentos, ejercicios, acondicionamiento, revisión en vídeo y una prueba para ver tu progreso.",
+  "durationWeeks": 12,
+  "weeklyTargetMinutes": 240,
+  "steps": [
+    { "title": "Seguridad, equipamiento y prueba inicial", "description": "Consigue el equipo adecuado, consulta a un médico si hace falta y registra tu punto de partida con una prueba sencilla que puedas repetir más adelante.", "hours": 3 },
+    { "title": "Fundamentos y posición del cuerpo", "description": "Aprende la postura, el agarre o la posición básica de la habilidad con un entrenador, un buen curso en vídeo o un compañero de entrenamiento.", "hours": 8 },
+    { "title": "Ejercicios de movimientos básicos", "description": "Divide la habilidad en sus movimientos más simples y repite cada uno despacio y con limpieza antes de añadir velocidad o fuerza.", "hours": 12 },
+    { "title": "Acondicionamiento: fuerza, movilidad y resistencia", "description": "Construye la base física que necesita la habilidad con un plan progresivo de dos o tres sesiones por semana.", "hours": 16 },
+    { "title": "Junta las piezas", "description": "Combina los ejercicios en el movimiento completo, primero despacio y luego a ritmo normal, sin perder la técnica.", "hours": 12 },
+    { "title": "Grábate y revisa tu técnica", "description": "Fílmate desde dos ángulos, compara con una referencia y pide opinión a un entrenador o a alguien con experiencia.", "hours": 4 },
+    { "title": "La habilidad bajo presión", "description": "Usa la habilidad en partidos, rutas, series, combates de práctica o intentos cronometrados, donde la fatiga y los rivales la ponen a prueba.", "hours": 12 },
+    { "title": "Rutina de recuperación y prevención de lesiones", "description": "Añade estiramientos, movilidad, sueño y días de descanso. Aprende las señales de alarma que indican que debes parar.", "hours": 4 },
+    { "title": "Repite la prueba y fija el siguiente nivel", "description": "Repite tu prueba inicial, compara, celebra el progreso y elige el siguiente objetivo.", "hours": 3 }
+  ],
+  "competencies": [
+    { "name": "Técnica", "description": "Movimiento correcto y repetible de la habilidad a ritmo normal.", "target": 4 },
+    { "name": "Acondicionamiento", "description": "La fuerza, la resistencia y la velocidad que exige la habilidad.", "target": 4 },
+    { "name": "Rendimiento bajo presión", "description": "Mantener la técnica cuando estás cansado, nervioso o compitiendo.", "target": 3 },
+    { "name": "Movilidad y prevención de lesiones", "description": "Rango de movimiento, calentamiento y hábitos de recuperación que te permiten seguir entrenando.", "target": 3 },
+    { "name": "Táctica y visión de juego", "description": "Leer la situación y elegir la acción adecuada.", "target": 3 }
+  ],
+  "measures": [
+    { "name": "Nota de la prueba de habilidad", "unit": "/10", "max": 10, "target": 8, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE", "competency": "Técnica" },
+    { "name": "Tiempo del ejercicio", "unit": "s", "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Acondicionamiento" }
+  ],
+  "routines": [
+    { "title": "Ejercicios de técnica", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 40, "step": 2 },
+    { "title": "Sesión de acondicionamiento", "cadence": "WEEKLY", "timesPerWeek": 2, "minutes": 45, "step": 3 },
+    { "title": "Movilidad y vuelta a la calma", "cadence": "DAILY", "minutes": 10, "step": 7 }
+  ],
+  "cards": [
+    { "front": "¿Qué es la sobrecarga progresiva?", "back": "Aumentar poco a poco la exigencia del entrenamiento (carga, volumen, velocidad o dificultad) para que el cuerpo siga adaptándose." },
+    { "front": "¿Qué mide la escala RPE?", "back": "La percepción subjetiva del esfuerzo, de 1 (muy fácil) a 10 (esfuerzo máximo). Indica lo duro que te resultó una sesión." },
+    { "front": "¿Para qué sirve calentar?", "back": "Sube la temperatura corporal y el pulso, lubrica las articulaciones y ensaya los movimientos, lo que reduce el riesgo de lesión y mejora el rendimiento." },
+    { "front": "¿Por qué grabar tu técnica?", "back": "Lo que sientes y lo que haces suelen diferir. El vídeo muestra el movimiento real y permite compararlo con una referencia." },
+    { "front": "¿Qué es la práctica deliberada?", "back": "Entrenar con foco en una debilidad concreta, un poco por encima de tu capacidad actual, con retroalimentación inmediata y plena atención." },
+    { "front": "¿Por qué los días de descanso forman parte del entrenamiento?", "back": "El cuerpo se adapta durante la recuperación, no durante la sesión. Planifica al menos uno o dos días de descanso por semana y duerme lo suficiente." },
+    { "front": "¿Qué son las agujetas?", "back": "Dolor muscular que alcanza su punto máximo uno o dos días después de un esfuerzo desconocido. Es normal y pasa; el dolor agudo o en las articulaciones no lo es, así que para y haz que te lo revisen." }
+  ]
+}

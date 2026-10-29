@@ -1,0 +1,48 @@
+{
+  "id": "language-exam",
+  "name": "Preparación de un examen de idioma",
+  "description": "Sube de nivel en un idioma y aprueba un examen oficial (IELTS, TOEFL, DELE, DELF, Goethe, JLPT...). Cubre las cuatro destrezas, vocabulario, gramática y simulacros con tiempo, y termina con la semana del examen.",
+  "durationWeeks": 16,
+  "weeklyTargetMinutes": 420,
+  "steps": [
+    { "title": "Diagnostica tu nivel y elige el examen", "description": "Haz una prueba de nivel gratuita, revisa el formato y la puntuación del examen, y decide la fecha y la nota que necesitas.", "hours": 4 },
+    { "title": "Organiza tu sistema de estudio", "description": "Elige un libro de curso, una app y un cuaderno, planifica un horario semanal y crea tu mazo de vocabulario.", "hours": 3 },
+    { "title": "Repaso de gramática esencial", "description": "Repasa las estructuras en las que se apoya el examen: tiempos verbales, condicionales, conectores, estilo indirecto. Haz ejercicios después de cada tema.", "hours": 14 },
+    { "title": "Vocabulario: las primeras 1.000 palabras", "description": "Aprende palabras frecuentes y de los temas del examen en contexto, con frases de ejemplo, y repásalas cada día con tarjetas.", "hours": 16 },
+    { "title": "Comprensión auditiva", "description": "Entrena con grabaciones al estilo del examen: anticipa las respuestas, detecta sinónimos y practica tomar notas y dictados.", "hours": 16 },
+    { "title": "Comprensión de lectura", "description": "Practica la lectura rápida, la búsqueda de datos y la inferencia con textos del examen. Cronometra cada ejercicio y revisa cada error.", "hours": 14 },
+    { "title": "Expresión escrita", "description": "Aprende la estructura de cada tipo de tarea, escribe un texto por semana y haz que te lo corrijan o compáralo con modelos.", "hours": 16 },
+    { "title": "Expresión oral", "description": "Grábate respondiendo preguntas del examen, imita a hablantes nativos y practica con un compañero o un tutor.", "hours": 16 },
+    { "title": "Simulacro 1 con tiempo y análisis de errores", "description": "Haz un examen completo en condiciones reales y clasifica cada error por su causa: conocimiento, tiempo o descuido.", "hours": 8 },
+    { "title": "Entrenamiento de puntos débiles", "description": "Dedica el tiempo a donde el simulacro mostró más pérdidas, no a lo que te resulta cómodo.", "hours": 18 },
+    { "title": "Simulacros 2 y 3 con tiempo", "description": "Dos exámenes completos más, con una semana de diferencia y el mismo análisis. Apunta a un margen por encima de la nota que necesitas.", "hours": 10 },
+    { "title": "Semana del examen: logística y repaso ligero", "description": "Revisa documentos, ruta y normas, duerme bien y solo repasa resúmenes y tarjetas.", "hours": 6 }
+  ],
+  "competencies": [
+    { "name": "Comprensión auditiva", "description": "Entender grabaciones a la velocidad del examen y captar el detalle que piden las preguntas.", "target": 4 },
+    { "name": "Comprensión de lectura", "description": "Leer los textos del examen dentro del tiempo y responder preguntas de inferencia.", "target": 4 },
+    { "name": "Expresión escrita", "description": "Escribir textos claros y bien organizados del tipo y la extensión requeridos, con pocos errores.", "target": 4 },
+    { "name": "Expresión oral", "description": "Responder con espontaneidad, desarrollar ideas con ejemplos y hacerte entender con facilidad.", "target": 4 },
+    { "name": "Vocabulario y gramática", "description": "Variedad y corrección de las palabras y estructuras que puedes usar sin pensar.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Simulacro de examen", "unit": "%", "max": 100, "target": 75, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE" },
+    { "name": "Errores por redacción", "unit": "errores", "target": 5, "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Expresión escrita" }
+  ],
+  "routines": [
+    { "title": "Tarjetas de vocabulario", "cadence": "DAILY", "minutes": 15, "step": 3 },
+    { "title": "Práctica de comprensión auditiva", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 30, "step": 4 },
+    { "title": "Práctica oral (con compañero o grabándote)", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 25, "step": 7 }
+  ],
+  "cards": [
+    { "front": "MCER A1 y A2: ¿qué sabes hacer?", "back": "Usuario básico: entiendes y usas expresiones cotidianas, te presentas y haces y respondes preguntas sencillas sobre temas conocidos." },
+    { "front": "MCER B1: ¿qué sabes hacer?", "back": "Usuario independiente: te desenvuelves en la mayoría de situaciones de viaje, describes experiencias y planes, y das razones y opiniones breves." },
+    { "front": "MCER B2: ¿qué sabes hacer?", "back": "Entiendes las ideas principales de textos complejos, te comunicas con nativos sin esfuerzo y escribes textos claros y detallados." },
+    { "front": "MCER C1: ¿qué sabes hacer?", "back": "Usuario competente: entiendes textos largos y exigentes, te expresas con fluidez y espontaneidad, y usas el idioma con flexibilidad para el trabajo y el estudio." },
+    { "front": "MCER C2: ¿qué sabes hacer?", "back": "Entiendes prácticamente todo lo que oyes o lees, resumes información de varias fuentes y te expresas con precisión y matices." },
+    { "front": "¿Cómo abordas una tarea de comprensión auditiva con preguntas?", "back": "Lee primero las preguntas, anticipa el tipo de respuesta, escucha los sinónimos de las palabras de la pregunta y nunca dejes una respuesta en blanco." },
+    { "front": "¿Cómo usar los primeros minutos de una tarea de escritura?", "back": "Planifica unos cinco minutos: postura, dos argumentos con ejemplos y conclusión. Reserva los últimos minutos para revisar gramática, ortografía y número de palabras." },
+    { "front": "¿Qué valoran los examinadores en la prueba oral?", "back": "Fluidez y coherencia, variedad de vocabulario, variedad y corrección gramatical, y pronunciación. Amplía tus respuestas con razones y ejemplos." },
+    { "front": "¿Por qué importan los simulacros con tiempo?", "back": "Entrenan el manejo del tiempo, la resistencia y la técnica. Revisa cada error y anota la regla que hay detrás." }
+  ]
+}

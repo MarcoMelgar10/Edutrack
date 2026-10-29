@@ -1,0 +1,1142 @@
+/*
+ * EduTrack base styles — identical in light and dark.
+ * Rule: no literal colors in this file. Every color is an -et-* token from tokens-*.css.
+ */
+
+/* ---------- AtlantaFX variables mapped onto EduTrack tokens ---------- */
+.root {
+    -color-fg-default: -et-text;
+    -color-fg-muted: -et-text-muted;
+    -color-fg-subtle: -et-text-muted;
+    -color-fg-emphasis: -et-on-accent;
+
+    -color-bg-default: -et-background;
+    -color-bg-overlay: -et-background;
+    -color-bg-subtle: -et-surface;
+    -color-bg-inset: -et-surface;
+
+    -color-border-default: -et-border;
+    -color-border-muted: -et-border;
+    -color-border-subtle: -et-border;
+    -color-shadow-default: transparent;          /* crisp formal: no shadows */
+
+    -color-accent-fg: -et-accent;
+    -color-accent-emphasis: -et-accent;
+    -color-accent-muted: -et-accent-muted;
+    -color-accent-subtle: -et-accent-subtle;
+
+    /* No green or amber anywhere: success and warning collapse onto the accent. */
+    -color-success-fg: -et-accent;
+    -color-success-emphasis: -et-accent;
+    -color-success-muted: -et-accent-muted;
+    -color-success-subtle: -et-accent-subtle;
+    -color-warning-fg: -et-accent;
+    -color-warning-emphasis: -et-accent;
+    -color-warning-muted: -et-accent-muted;
+    -color-warning-subtle: -et-accent-subtle;
+
+    -color-danger-fg: -et-danger;
+    -color-danger-emphasis: -et-danger;
+
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-background-color: -et-background;
+}
+
+/* ---------- Typography scale ---------- */
+.app-title,
+.text-title {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 20px;
+    -fx-text-fill: -et-text;
+}
+
+.text-heading {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 15px;
+    -fx-text-fill: -et-text;
+}
+
+.text-body {
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+.text-caption {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -et-text-muted;
+}
+
+.monospace {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12px;
+}
+
+/* ---------- Shape: 3 px corners, 1 px borders ---------- */
+.button,
+.toggle-button,
+.menu-button,
+.split-menu-button,
+.text-input,
+.combo-box-base,
+.choice-box {
+    -fx-background-radius: 3px, 2px;
+}
+
+/* ---------- Icons: monochrome, follow the text color in both themes ---------- */
+.ikonli-font-icon {
+    -fx-icon-color: -et-text;
+    -fx-icon-size: 16px;
+}
+
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 3px;
+    -fx-border-color: transparent;
+    -fx-padding: 6px;
+    -fx-cursor: hand;
+}
+
+.icon-button .ikonli-font-icon {
+    -fx-icon-color: -et-text-muted;
+}
+
+.icon-button:hover {
+    -fx-background-color: -et-surface;
+}
+
+/* The transparent background above removes AtlantaFX's ring, so keyboard focus gets its own. */
+.icon-button:focus-visible {
+    -fx-border-color: -et-accent-muted;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+}
+
+.icon-button:hover .ikonli-font-icon {
+    -fx-icon-color: -et-text;
+}
+
+/* ---------- Tabs of the step page ---------- */
+.record-tabs > .tab-header-area {
+    -fx-padding: 0 16px 0 16px;
+}
+
+/* Thin 1 px base line under the tabs; the selected tab keeps AtlantaFX's 2 px accent underline. */
+.record-tabs > .tab-header-area > .tab-header-background {
+    -fx-background-insets: 0, 0 0 1px 0;
+}
+
+.record-tabs > .tab-header-area > .headers-region > .tab > .tab-container > .tab-label {
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: -et-text-muted;
+}
+
+.record-tabs > .tab-header-area > .headers-region > .tab:selected > .tab-container > .tab-label {
+    -fx-text-fill: -et-text;
+}
+
+/* ---------- Empty states ---------- */
+.empty-state {
+    -fx-padding: 48px;
+}
+
+/* ---------- Forms (dialogs) ---------- */
+.form-label {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text;
+}
+
+.form-error {
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-danger;
+}
+
+.form-hint {
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -et-text-muted;
+}
+
+/* Icon choices of the Area dialog: outlined squares; the chosen one is marked with the accent. */
+.icon-picker .icon-choice {
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-pref-width: 36px;
+    -fx-pref-height: 36px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 3px;
+    -fx-border-color: -et-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.icon-picker .icon-choice:hover {
+    -fx-background-color: -et-surface;
+}
+
+.icon-picker .icon-choice:focused {
+    -fx-border-color: -et-accent-muted;
+    -fx-border-width: 2px;
+}
+
+.icon-picker .icon-choice:selected {
+    -fx-border-color: -et-accent;
+    -fx-background-color: -et-accent-subtle;
+}
+
+.icon-picker .icon-choice:selected .ikonli-font-icon {
+    -fx-icon-color: -et-accent;
+}
+
+/* ---------- Pages and their rows (Today, Insights, Settings) ---------- */
+.page-scroll,
+.page-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.area-row {
+    -fx-padding: 14px 12px 14px 12px;
+    -fx-border-color: transparent transparent -et-border transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.area-row:hover {
+    -fx-background-color: -et-surface;
+}
+
+.area-row:focus-visible {
+    -fx-background-color: -et-accent-subtle;
+}
+
+.area-row-name {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 14px;
+}
+
+/* ---------- Area tab ---------- */
+.area-split {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-width: 0;
+}
+
+/* A 1 px line in a 5 px wide drag handle: the padding sets the width, the insets cut the visible line. */
+.area-split > .split-pane-divider {
+    -fx-background-color: -et-border;
+    -fx-background-insets: 0 2px 0 2px;
+    -fx-padding: 0 2.5px 0 2.5px;
+    -fx-opacity: 1;
+}
+
+.area-split > .split-pane-divider > .horizontal-grabber {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.area-split > .split-pane-divider:pressed {
+    -fx-background-color: -et-accent;
+}
+
+.goal-list-pane {
+    -fx-background-color: -et-background;
+}
+
+.pane-header {
+    -fx-padding: 16px 16px 8px 16px;
+}
+
+.menu-button.icon-button > .label {
+    -fx-padding: 0;
+}
+
+.goal-list,
+.timeline {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.goal-list:focused,
+.timeline:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.goal-card-cell {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.goal-card-cell:filled {
+    -fx-border-color: transparent transparent -et-border transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.goal-card-cell:filled:hover {
+    -fx-background-color: -et-surface;
+}
+
+.goal-card-cell:filled:selected {
+    -fx-background-color: -et-accent-subtle;
+}
+
+/* The unselected card keeps a transparent 2 px edge so the text does not move when it is selected. */
+.goal-card {
+    -fx-padding: 12px 16px 12px 16px;
+    -fx-border-color: transparent;
+    -fx-border-width: 0 0 0 2px;
+}
+
+.goal-card-cell:selected .goal-card {
+    -fx-border-color: transparent transparent transparent -et-accent;
+}
+
+.goal-card-title {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13px;
+}
+
+.goal-card-percent {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text-muted;
+}
+
+.goal-card-cell.completed .goal-card-title {
+    -fx-text-fill: -et-text-muted;
+}
+
+/* Past the deadline: the caption turns SemiBold in the body text color, with an alert icon. */
+.goal-card-cell.overdue .goal-card-caption {
+    -fx-font-family: "Inter SemiBold";
+    -fx-text-fill: -et-text;
+    -fx-graphic-text-gap: 4px;
+}
+
+.goal-card-overdue-icon {
+    -fx-icon-size: 12px;
+    -fx-icon-color: -et-text;
+}
+
+/* ---------- Progress bars ---------- */
+.area-progress,
+.goal-card-progress,
+.goal-progress {
+    -fx-padding: 0;
+}
+
+.area-progress > .track,
+.goal-card-progress > .track,
+.goal-progress > .track {
+    -fx-background-color: -et-border;
+    -fx-background-insets: 0;
+    -fx-background-radius: 2px;
+}
+
+.area-progress > .bar,
+.goal-card-progress > .bar,
+.goal-progress > .bar {
+    -fx-background-color: -et-accent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 2px;
+}
+
+.area-progress > .track,
+.area-progress > .bar,
+.goal-card-progress > .track,
+.goal-card-progress > .bar {
+    -fx-min-height: 4px;
+    -fx-pref-height: 4px;
+    -fx-max-height: 4px;
+}
+
+.area-progress > .bar,
+.goal-card-progress > .bar {
+    -fx-padding: 2px;
+}
+
+.goal-progress > .track,
+.goal-progress > .bar {
+    -fx-min-height: 6px;
+    -fx-pref-height: 6px;
+    -fx-max-height: 6px;
+}
+
+.goal-progress > .bar {
+    -fx-padding: 3px;
+}
+
+.progress-value {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+/* ---------- Goal panel ---------- */
+.goal-detail {
+    -fx-background-color: -et-background;
+}
+
+.goal-description {
+    -fx-text-fill: -et-text-muted;
+    -fx-font-size: 13px;
+}
+
+.section-label {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 11px;
+    -fx-text-fill: -et-text-muted;
+}
+
+.completion-banner {
+    -fx-padding: 8px 12px 8px 12px;
+    -fx-background-color: -et-accent-subtle;
+    -fx-background-radius: 3px;
+    -fx-border-color: -et-accent-muted;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+}
+
+.completion-banner .label {
+    -fx-text-fill: -et-accent;
+}
+
+.completion-banner .ikonli-font-icon {
+    -fx-icon-color: -et-accent;
+}
+
+.danger-text {
+    -fx-text-fill: -et-text-muted;
+}
+
+.danger-text:hover {
+    -fx-text-fill: -et-danger;
+}
+
+/* ---------- Roadmap timeline ---------- */
+.timeline-cell {
+    -fx-padding: 0 8px 0 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.timeline-cell:filled:selected {
+    -fx-background-color: -et-accent-subtle;
+}
+
+.timeline-row {
+    -fx-spacing: 12px;
+}
+
+.rail-column {
+    -fx-min-width: 28px;
+    -fx-pref-width: 28px;
+}
+
+.rail {
+    -fx-min-width: 2px;
+    -fx-pref-width: 2px;
+    -fx-max-width: 2px;
+    -fx-background-color: -et-border;
+}
+
+/* 7 px puts the centre of the status mark on the centre of the step title. */
+.rail-above {
+    -fx-min-height: 7px;
+    -fx-pref-height: 7px;
+    -fx-max-height: 7px;
+}
+
+.step-mark-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+/* The keyboard ring sits outside the button's bounds, so showing it never moves the layout. */
+.step-mark-button:focused {
+    -fx-border-color: -et-accent-muted;
+    -fx-border-width: 1.5px;
+    -fx-border-radius: 12px;
+    -fx-border-insets: -2px;
+}
+
+.step-mark .ring {
+    -fx-fill: -et-background;
+    -fx-stroke: -et-text-muted;
+    -fx-stroke-width: 1.5;
+}
+
+.step-mark.in-progress .ring {
+    -fx-stroke: -et-accent;
+}
+
+.step-mark.in-progress .fill {
+    -fx-fill: -et-accent;
+    -fx-stroke: transparent;
+}
+
+.step-mark.done .ring {
+    -fx-fill: -et-accent;
+    -fx-stroke: -et-accent;
+}
+
+.step-mark.done .check {
+    -fx-icon-color: -et-on-accent;
+    -fx-icon-size: 11px;
+}
+
+.step-content {
+    -fx-padding: 9px 0 12px 0;
+    -fx-spacing: 3px;
+}
+
+.step-title {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+.timeline-cell.done .step-title {
+    -fx-text-fill: -et-text-muted;
+}
+
+.step-link,
+.step-link:visited,
+.step-link:armed {
+    -fx-text-fill: -et-accent;
+    -fx-font-size: 12px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-underline: false;
+}
+
+.step-link:hover {
+    -fx-underline: true;
+}
+
+.step-link:focused {
+    -fx-border-color: -et-accent-muted;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-border-insets: -2px;
+}
+
+.step-link .ikonli-font-icon {
+    -fx-icon-color: -et-accent;
+    -fx-icon-size: 12px;
+}
+
+.step-meta {
+    -fx-spacing: 12px;
+    -fx-padding: 10px 0 0 0;
+}
+
+/* Wide enough for "Not started": a long title is cut with an ellipsis instead of squeezing the status. */
+.step-status {
+    -fx-min-width: 64px;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.step-hours {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text-muted;
+    -fx-min-width: 40px;
+    -fx-alignment: CENTER_RIGHT;
+}
+
+.step-actions {
+    -fx-padding: 5px 0 0 0;
+}
+
+.step-actions .icon-button {
+    -fx-padding: 4px;
+}
+
+/* ---------- Step page ---------- */
+.step-page {
+    -fx-background-color: -et-background;
+}
+
+.record-tabs > .tab-header-area {
+    -fx-padding: 0 28px 0 28px;
+}
+
+.breadcrumb-link,
+.breadcrumb-link:visited,
+.breadcrumb-link:armed {
+    -fx-text-fill: -et-text-muted;
+    -fx-font-size: 12px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-underline: false;
+}
+
+.breadcrumb-link .ikonli-font-icon {
+    -fx-icon-color: -et-text-muted;
+    -fx-icon-size: 13px;
+}
+
+.breadcrumb-link:hover {
+    -fx-text-fill: -et-text;
+    -fx-underline: false;
+}
+
+.breadcrumb-link:hover .ikonli-font-icon {
+    -fx-icon-color: -et-text;
+}
+
+.breadcrumb-link:focused {
+    -fx-border-color: -et-accent-muted;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-border-insets: -2px;
+}
+
+.step-title-link {
+    -fx-cursor: hand;
+}
+
+.step-title-link:hover {
+    -fx-underline: true;
+}
+
+/* ---------- Notes: the formatted read view (the editor itself is styled in features.css) ---------- */
+.notes-preview-scroll,
+.notes-preview-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.notes-preview {
+    -fx-padding: 4px 16px 16px 16px;
+    -fx-spacing: 10px;
+}
+
+.save-state {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -et-text-muted;
+}
+
+.save-state.failed {
+    -fx-text-fill: -et-danger;
+}
+
+/* ---------- Resources, exercises and results ---------- */
+.record-list {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.record-list:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.record-cell {
+    -fx-padding: 8px 0 8px 0;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.record-cell:filled {
+    -fx-border-color: transparent transparent -et-border transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.record-cell:filled:hover {
+    -fx-background-color: -et-surface;
+}
+
+.record-cell:filled:selected {
+    -fx-background-color: -et-accent-subtle;
+}
+
+.record-row {
+    -fx-spacing: 10px;
+    -fx-padding: 0 8px 0 8px;
+}
+
+.record-item-text {
+    -fx-spacing: 2px;
+}
+
+.record-item-title {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+.record-cell.done .record-item-title {
+    -fx-text-fill: -et-text-muted;
+}
+
+.record-type {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -et-text-muted;
+}
+
+.record-link,
+.record-link:visited,
+.record-link:armed {
+    -fx-text-fill: -et-accent;
+    -fx-font-size: 12px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-underline: false;
+}
+
+.record-link:hover {
+    -fx-underline: true;
+}
+
+.record-link:focused {
+    -fx-border-color: -et-accent-muted;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-border-insets: -2px;
+}
+
+.result-score {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 15px;
+    -fx-text-fill: -et-text;
+}
+
+.record-actions .icon-button {
+    -fx-padding: 4px;
+}
+
+.exercise-check {
+    -fx-font-size: 13px;
+    -fx-text-fill: -et-text;
+}
+
+.exercise-check .text {
+    -fx-fill: -et-text;
+}
+
+.record-cell.done .exercise-check {
+    -fx-text-fill: -et-text-muted;
+}
+
+.record-cell.done .exercise-check .text {
+    -fx-strikethrough: true;
+    -fx-fill: -et-text-muted;
+}
+
+.exercise-input {
+    -fx-font-size: 13px;
+}
+
+/* Results on the goal page: the same rows, without a list around them. */
+.goal-results {
+    -fx-spacing: 0;
+}
+
+.goal-results .record-row {
+    -fx-padding: 8px 8px 8px 8px;
+    -fx-border-color: transparent transparent -et-border transparent;
+    -fx-border-width: 0 0 1px 0;
+}
+
+.goal-results .record-row:hover {
+    -fx-background-color: -et-surface;
+}
+
+/* ---------- Markdown preview ---------- */
+.md-h1,
+.md-h2,
+.md-h3 {
+    -fx-line-spacing: 2px;
+}
+
+.md-h1 .md-text {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 20px;
+    -fx-fill: -et-text;
+}
+
+.md-h2 {
+    -fx-padding: 6px 0 0 0;
+}
+
+.md-h2 .md-text {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 16px;
+    -fx-fill: -et-text;
+}
+
+.md-h3 {
+    -fx-padding: 4px 0 0 0;
+}
+
+.md-h3 .md-text {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 14px;
+    -fx-fill: -et-text;
+}
+
+.md-paragraph {
+    -fx-line-spacing: 3px;
+}
+
+.md-text {
+    -fx-font-family: "Inter";
+    -fx-font-size: 13px;
+    -fx-fill: -et-text;
+}
+
+.md-strong {
+    -fx-font-family: "Inter SemiBold";
+}
+
+.md-em {
+    -fx-font-family: "Inter";
+    -fx-font-style: italic;
+}
+
+.md-strong.md-em {
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-style: italic;
+}
+
+.md-code-inline {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text;
+    -fx-background-color: -et-surface;
+    -fx-background-radius: 3px;
+    -fx-border-color: -et-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 0 3px 0 3px;
+}
+
+.md-code {
+    -fx-background-color: -et-surface;
+    -fx-background-radius: 3px;
+    -fx-border-color: -et-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 8px 12px 8px 12px;
+}
+
+.md-code-block {
+    -fx-font-family: "Consolas";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text;
+}
+
+.md-list {
+    -fx-spacing: 4px;
+}
+
+.md-list-row {
+    -fx-spacing: 6px;
+}
+
+.md-list-item {
+    -fx-spacing: 4px;
+}
+
+.md-list-marker {
+    -fx-text-fill: -et-text-muted;
+    -fx-min-width: 18px;
+    -fx-alignment: TOP_RIGHT;
+}
+
+.md-quote {
+    -fx-border-color: transparent transparent transparent -et-border;
+    -fx-border-width: 0 0 0 2px;
+    -fx-padding: 0 0 0 12px;
+    -fx-spacing: 6px;
+}
+
+.md-quote .md-text {
+    -fx-fill: -et-text-muted;
+}
+
+.md-rule .line {
+    -fx-border-color: -et-border transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+}
+
+.md-link,
+.md-link:visited,
+.md-link:armed {
+    -fx-text-fill: -et-accent;
+    -fx-font-size: 13px;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-underline: false;
+}
+
+.md-strike {
+    -fx-strikethrough: true;
+}
+
+/* Task lists: a read-only checkbox in place of the bullet. */
+.md-task {
+    -fx-min-width: 13px;
+    -fx-min-height: 13px;
+    -fx-max-width: 13px;
+    -fx-max-height: 13px;
+    -fx-translate-y: 3px;
+    -fx-border-color: -et-text-muted;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.md-task-done {
+    -fx-background-color: -et-accent;
+    -fx-border-color: -et-accent;
+}
+
+.md-task-check {
+    -fx-icon-size: 10px;
+    -fx-icon-color: -et-on-accent;
+}
+
+/* Tables: hairline grid, header row in SemiBold on the surface tone. */
+.md-table-box {
+    -fx-border-color: -et-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+}
+
+.md-table-cell {
+    -fx-padding: 4px 8px 4px 8px;
+    -fx-border-color: transparent -et-border -et-border transparent;
+    -fx-border-width: 0 1px 1px 0;
+}
+
+.md-table-head {
+    -fx-background-color: -et-surface;
+}
+
+.md-link:hover {
+    -fx-underline: true;
+}
+
+/* ---------- Shell: left rail, pages and the dock ---------- */
+.shell {
+    -fx-background-color: -et-background;
+}
+
+.shell-rail {
+    -fx-background-color: -et-surface;
+    -fx-border-color: transparent -et-border transparent transparent;
+    -fx-border-width: 0 1px 0 0;
+}
+
+.shell-brand {
+    -fx-padding: 18px 20px 14px 20px;
+}
+
+.shell-nav {
+    -fx-padding: 0 10px 8px 10px;
+}
+
+.shell-section {
+    -fx-padding: 14px 10px 2px 20px;
+}
+
+.shell-footer {
+    -fx-padding: 8px 10px 10px 10px;
+    -fx-border-color: -et-border transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Rail entries: quiet text and icon; the page being shown gets the subtle accent tint and accent text. */
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 3px;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-padding: 7px 10px 7px 10px;
+    -fx-cursor: hand;
+}
+
+.nav-item:hover {
+    -fx-background-color: -et-border;
+}
+
+.nav-item:focus-visible {
+    -fx-border-color: -et-accent-muted;
+}
+
+.nav-item .nav-item-title {
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: -et-text;
+}
+
+.nav-item .ikonli-font-icon {
+    -fx-icon-color: -et-text-muted;
+}
+
+.nav-item:current {
+    -fx-background-color: -et-accent-subtle;
+}
+
+.nav-item:current .nav-item-title {
+    -fx-font-family: "Inter SemiBold";
+    -fx-text-fill: -et-accent;
+}
+
+.nav-item:current .ikonli-font-icon {
+    -fx-icon-color: -et-accent;
+}
+
+/* The count on a rail entry: a pill in the accent color, absent at 0. */
+.nav-badge {
+    -fx-background-color: -et-accent;
+    -fx-background-radius: 9px;
+    -fx-padding: 1px 7px 1px 7px;
+    -fx-font-family: "Inter SemiBold";
+    -fx-font-size: 11px;
+    -fx-text-fill: -et-on-accent;
+}
+
+/* The areas under the entries: icon, name and muted percent. */
+.area-rail,
+.area-rail:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.area-rail-cell {
+    -fx-padding: 0 10px 0 10px;
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+}
+
+.area-rail-row {
+    -fx-padding: 7px 10px 7px 10px;
+    -fx-background-radius: 3px;
+}
+
+.area-rail-cell:filled:hover .area-rail-row {
+    -fx-background-color: -et-border;
+}
+
+.area-rail-cell:filled:selected .area-rail-row {
+    -fx-background-color: -et-accent-subtle;
+}
+
+.area-rail-name {
+    -fx-font-family: "Inter Medium";
+    -fx-text-fill: -et-text;
+}
+
+.area-rail-percent {
+    -fx-font-family: "Inter Medium";
+    -fx-font-size: 12px;
+    -fx-text-fill: -et-text-muted;
+}
+
+.area-rail-row .ikonli-font-icon {
+    -fx-icon-color: -et-text-muted;
+}
+
+.area-rail-cell:filled:selected .area-rail-name {
+    -fx-font-family: "Inter SemiBold";
+    -fx-text-fill: -et-accent;
+}
+
+.area-rail-cell:filled:selected .area-rail-row .ikonli-font-icon {
+    -fx-icon-color: -et-accent;
+}
+
+.area-rail-cell:drop-target .area-rail-row {
+    -fx-border-color: -et-accent transparent transparent transparent;
+    -fx-border-width: 2px 0 0 0;
+}
+
+/* Where a dragged goal card would land. */
+.goal-card-cell:drop-target {
+    -fx-border-color: -et-accent transparent -et-border transparent;
+    -fx-border-width: 2px 0 1px 0;
+}
+
+.shell-content {
+    -fx-background-color: -et-background;
+    -fx-min-width: 0;
+}
+
+/* The study-session bar lives here (hidden and unmanaged while empty). */
+.shell-dock {
+    -fx-background-color: -et-surface;
+    -fx-border-color: -et-border transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* ---------- Settings ---------- */
+.settings-page .check-box {
+    -fx-font-size: 13px;
+}
+
+/* ---------- Focus mode ---------- */
+.shell-rail.compact .shell-brand {
+    -fx-padding: 18px 8px 14px 8px;
+}
+
+/* The one control left in focus mode: small and quiet until the pointer comes near. */
+.focus-exit {
+    -fx-background-color: -et-surface;
+    -fx-border-color: -et-border;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 4px 10px 4px 8px;
+    -fx-graphic-text-gap: 6px;
+    -fx-font-size: 12px;
+    -fx-opacity: 0.6;
+    -fx-cursor: hand;
+}
+
+.focus-exit:hover,
+.focus-exit:focus {
+    -fx-opacity: 1;
+}

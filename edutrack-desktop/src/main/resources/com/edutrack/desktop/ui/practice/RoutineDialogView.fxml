@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.edutrack.desktop.ui.practice.RoutineDialogController"
+      styleClass="form" spacing="16" prefWidth="460">
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%routine.form.title" styleClass="form-label"/>
+        <TextField fx:id="titleField" promptText="%routine.form.titlePrompt"/>
+    </VBox>
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%routine.form.step" styleClass="form-label"/>
+        <ComboBox fx:id="stepBox" maxWidth="Infinity"/>
+    </VBox>
+
+    <HBox spacing="16">
+        <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="%routine.form.cadence" styleClass="form-label"/>
+            <ComboBox fx:id="cadenceBox" maxWidth="Infinity"/>
+        </VBox>
+        <VBox fx:id="timesField" styleClass="form-field" spacing="6">
+            <Label text="%routine.form.times" styleClass="form-label"/>
+            <TextField fx:id="timesInput" prefColumnCount="4"/>
+        </VBox>
+        <VBox styleClass="form-field" spacing="6">
+            <Label text="%routine.form.minutes" styleClass="form-label"/>
+            <TextField fx:id="minutesInput" prefColumnCount="4"/>
+        </VBox>
+    </HBox>
+
+    <Label text="%routine.form.hint" styleClass="form-hint" wrapText="true"/>
+    <Label fx:id="errorLabel" styleClass="form-error" wrapText="true"/>
+</VBox>

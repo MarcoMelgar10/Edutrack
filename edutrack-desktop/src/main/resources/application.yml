@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: edutrack
+  main:
+    web-application-type: none
+    banner-mode: off
+  config:
+    import: optional:file:${user.home}/.edutrack/application.properties
+  datasource:
+    url: jdbc:postgresql://localhost:5432/edutrack
+    username: edutrack
+    # The password lives outside the repo: set spring.datasource.password in ~/.edutrack/application.properties
+    hikari:
+      connection-timeout: 5000
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+logging:
+  file:
+    name: ${user.home}/.edutrack/logs/edutrack.log

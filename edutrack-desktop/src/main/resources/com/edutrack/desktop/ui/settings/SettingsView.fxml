@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.edutrack.desktop.ui.settings.SettingsController"
+            fitToWidth="true" styleClass="page-scroll">
+    <VBox styleClass="page settings-page" spacing="28" maxWidth="720">
+        <padding>
+            <Insets top="24" right="32" bottom="32" left="32"/>
+        </padding>
+
+        <Label text="%nav.settings" styleClass="text-title"/>
+
+        <VBox spacing="10">
+            <Label text="%settings.general" styleClass="section-label"/>
+            <GridPane styleClass="settings-grid" hgap="24" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="200" prefWidth="260"/>
+                    <ColumnConstraints minWidth="160" prefWidth="240"/>
+                </columnConstraints>
+                <Label text="%settings.language" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="languageBox" prefWidth="220" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="%settings.theme" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="themeBox" prefWidth="220" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="%settings.weekStart" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="weekStartBox" prefWidth="220" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="%settings.checkInDay" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="checkInBox" prefWidth="220" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="%settings.study" styleClass="section-label"/>
+            <GridPane styleClass="settings-grid" hgap="24" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="200" prefWidth="260"/>
+                    <ColumnConstraints minWidth="160" prefWidth="240"/>
+                </columnConstraints>
+                <Label text="%settings.newCards" styleClass="form-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <Spinner fx:id="newCardsSpinner" prefWidth="120" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+                <Label text="%settings.reviewLimit" styleClass="form-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <Spinner fx:id="reviewLimitSpinner" prefWidth="120" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                <Label text="%settings.focusMinutes" styleClass="form-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <Spinner fx:id="focusSpinner" prefWidth="120" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                <Label text="%settings.breakMinutes" styleClass="form-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <Spinner fx:id="breakSpinner" prefWidth="120" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                <Label text="%settings.reminderHour" styleClass="form-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <Spinner fx:id="reminderSpinner" prefWidth="120" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="%settings.notifications" styleClass="section-label"/>
+            <VBox spacing="10">
+                <CheckBox fx:id="notificationsCheck" text="%settings.notificationsEnabled"/>
+                <CheckBox fx:id="trayCheck" text="%settings.minimizeToTray"/>
+                <CheckBox fx:id="startupCheck" text="%settings.startWithWindows"/>
+            </VBox>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="%settings.data" styleClass="section-label"/>
+            <Label text="%settings.data.backupFolder" styleClass="form-label"/>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <TextField fx:id="backupFolderField" editable="false" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="browseButton" text="%settings.data.browse" onAction="#browse"/>
+            </HBox>
+            <CheckBox fx:id="weeklyBackupCheck" text="%settings.data.weeklyBackup"/>
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <Button fx:id="backupNowButton" text="%settings.data.backupNow" onAction="#backUpNow"/>
+                <Button fx:id="restoreButton" text="%settings.data.restore" onAction="#restore"/>
+            </HBox>
+            <Label fx:id="backupMessage" wrapText="true" managed="false" visible="false"/>
+            <Label text="%settings.data.backups" styleClass="form-label"/>
+            <VBox fx:id="backupList" spacing="4"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

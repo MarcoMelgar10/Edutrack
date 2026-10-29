@@ -1,0 +1,47 @@
+{
+  "id": "career-change",
+  "name": "Career change",
+  "description": "Move into a new field: clarify the target role, close the skill gaps, build proof of your work and run a structured job search with interview practice.",
+  "durationWeeks": 20,
+  "weeklyTargetMinutes": 480,
+  "steps": [
+    { "title": "Define the target role and why", "description": "Research roles in the new field: day-to-day work, salary range, entry paths. Choose one or two target roles and write down why they fit you.", "hours": 8 },
+    { "title": "Skill-gap analysis", "description": "Collect about ten job postings for the target role, list the skills they ask for and mark what you already have, what is partial and what is missing.", "hours": 4 },
+    { "title": "Talk to people already in the field", "description": "Have at least five short conversations. Ask what the job is really like, what they would learn first and who is hiring.", "hours": 6 },
+    { "title": "Learning plan for the top three gaps", "description": "Pick the three gaps that appear most often and choose one course or book for each. Study them in order of importance.", "hours": 40 },
+    { "title": "Portfolio project 1", "description": "Build something that solves a real problem in the target field. Document the problem, your decisions and the result.", "hours": 40 },
+    { "title": "Portfolio project 2", "description": "A second, different project that shows range. Reuse what you learned and aim for something finished over something big.", "hours": 30 },
+    { "title": "Rewrite your CV, profile and personal story", "description": "Reframe your past experience for the new role. Write a one-page CV, an updated online profile and a two-minute story of why you are changing.", "hours": 8 },
+    { "title": "Build your network and visibility", "description": "Join communities, attend events, share what you are learning and message people who work where you would like to work.", "hours": 10 },
+    { "title": "Interview preparation", "description": "Prepare stories for behavioural questions, review the technical topics of the role and research each company before each interview.", "hours": 20 },
+    { "title": "Mock interviews with feedback", "description": "Practise with a friend, mentor or recording. Ask for honest feedback on clarity, structure and confidence.", "hours": 8 },
+    { "title": "Run the job search", "description": "Apply in batches, tailor each application, follow up after a week and keep a tracker with dates, contacts and next steps.", "hours": 30 },
+    { "title": "Negotiate and decide", "description": "Compare offers on more than salary: growth, learning, team and stability. Negotiate calmly with market data.", "hours": 4 }
+  ],
+  "competencies": [
+    { "name": "Role-specific skills", "description": "The technical or professional skills the target role requires day to day.", "target": 4 },
+    { "name": "Portfolio evidence", "description": "Finished work that proves you can do the job.", "target": 4 },
+    { "name": "Interviewing", "description": "Answer questions clearly with structured examples and ask good questions back.", "target": 4 },
+    { "name": "Networking", "description": "Build relationships with people in the new field who can advise or refer you.", "target": 3 },
+    { "name": "Personal narrative", "description": "Explain in a convincing way why you are changing and what you bring from before.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Mock interview rating", "unit": "/10", "max": 10, "target": 8, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE", "competency": "Interviewing" },
+    { "name": "Applications sent", "unit": "applications", "target": 30, "direction": "HIGHER_IS_BETTER", "combine": "SUM" }
+  ],
+  "routines": [
+    { "title": "Skill study block", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 60, "step": 3 },
+    { "title": "Networking outreach", "cadence": "WEEKLY", "timesPerWeek": 2, "minutes": 30, "step": 7 },
+    { "title": "Job search block", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 45, "step": 10 }
+  ],
+  "cards": [
+    { "front": "What does STAR stand for in interview answers?", "back": "Situation, Task, Action, Result. Set the scene briefly, say what you had to do, explain what you did and finish with the measurable outcome." },
+    { "front": "How should you structure 'Tell me about yourself'?", "back": "Present, past, future in under two minutes: what you do now, the experience that led here and why this role is the next step." },
+    { "front": "How do you answer 'What is your biggest weakness?'", "back": "Name a real, minor weakness, show what you are doing about it and give a recent example of improvement." },
+    { "front": "Who should name the salary number first?", "back": "Ideally the employer. Research the market range beforehand and, if asked first, answer with a range based on data, not on your last salary." },
+    { "front": "What belongs in a portfolio project write-up?", "back": "The problem, your role, the approach and decisions, the result, what you would improve, and a link to a demo or the code." },
+    { "front": "Formula for a strong CV bullet", "back": "Action verb + what you did + measurable result, for example: Reduced report preparation time by 40% by automating the monthly export." },
+    { "front": "What do you ask in an informational interview?", "back": "What a normal week looks like, what they wish they had known at the start, which skills matter most and who else you should talk to." },
+    { "front": "Good questions to ask at the end of an interview", "back": "What does success look like in the first six months? How is the team organised? What is the biggest challenge right now?" }
+  ]
+}

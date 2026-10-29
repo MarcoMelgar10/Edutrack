@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.edutrack.desktop.ui.skills.MeasureDialogController"
+      styleClass="form" spacing="16" prefWidth="500">
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%measure.form.name" styleClass="form-label"/>
+        <TextField fx:id="nameField" promptText="%measure.form.namePrompt"/>
+    </VBox>
+
+    <HBox spacing="16">
+        <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="%measure.form.unit" styleClass="form-label"/>
+            <ComboBox fx:id="unitBox" maxWidth="Infinity"/>
+        </VBox>
+        <VBox styleClass="form-field" spacing="6">
+            <Label text="%measure.form.max" styleClass="form-label"/>
+            <TextField fx:id="maxField" promptText="9" prefColumnCount="6"/>
+        </VBox>
+        <VBox styleClass="form-field" spacing="6">
+            <Label text="%measure.form.target" styleClass="form-label"/>
+            <TextField fx:id="targetField" promptText="7" prefColumnCount="6"/>
+        </VBox>
+    </HBox>
+
+    <Label fx:id="numbersHint" text="%measure.form.numbersHint" styleClass="form-error" wrapText="true"/>
+
+    <HBox spacing="16">
+        <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="%measure.form.direction" styleClass="form-label"/>
+            <ComboBox fx:id="directionBox" maxWidth="Infinity"/>
+        </VBox>
+        <VBox styleClass="form-field" spacing="6" HBox.hgrow="ALWAYS">
+            <Label text="%measure.form.combine" styleClass="form-label"/>
+            <ComboBox fx:id="combineBox" maxWidth="Infinity"/>
+        </VBox>
+    </HBox>
+    <Label text="%measure.form.combineHelp" styleClass="form-hint" wrapText="true"/>
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%measure.form.competency" styleClass="form-label"/>
+        <ComboBox fx:id="competencyBox" maxWidth="Infinity"/>
+    </VBox>
+
+    <Label fx:id="errorLabel" styleClass="form-error" wrapText="true"/>
+</VBox>

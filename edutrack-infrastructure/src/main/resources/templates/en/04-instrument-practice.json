@@ -1,0 +1,47 @@
+{
+  "id": "instrument-practice",
+  "name": "Musical instrument practice",
+  "description": "A steady practice plan for any instrument: sound, technique, reading, rhythm, ear training and repertoire. It has no end date; it is a habit that grows with you, measured by weekly practice time.",
+  "weeklyTargetMinutes": 210,
+  "steps": [
+    { "title": "Set up your instrument and practice space", "description": "Get the instrument in good playing condition and tuned. Add a metronome, a tuner, a music stand, a recorder and a fixed place and time to practise.", "hours": 2 },
+    { "title": "Posture, holding and producing a clean sound", "description": "Learn the basics of posture, hand position and tone production, ideally checked by a teacher or a video lesson.", "hours": 6 },
+    { "title": "Reading music and basic theory", "description": "Notes on the staff, rhythm values, time signatures and key signatures. Read a little every day.", "hours": 10 },
+    { "title": "Scales and arpeggios in the first keys", "description": "Start with the easiest keys, slowly and evenly, then widen the range and add keys one at a time.", "hours": 12 },
+    { "title": "Rhythm and tempo control with a metronome", "description": "Clap and play rhythms, subdivide the beat and raise the tempo in small steps only when the passage is clean.", "hours": 8 },
+    { "title": "Learn your first complete piece", "description": "Break the piece into short sections, practise each slowly, join them and play the whole piece from start to finish.", "hours": 20 },
+    { "title": "Ear training: intervals, chords and playing by ear", "description": "Recognise intervals and chord qualities, sing before you play and pick out simple melodies without sheet music.", "hours": 10 },
+    { "title": "Record yourself and get feedback", "description": "Record a run-through, listen critically and ask a teacher or an experienced player for feedback. Pick two things to fix.", "hours": 4 },
+    { "title": "Perform for someone", "description": "Play the piece for a friend, a teacher or an open session. Performing reveals what practice hides.", "hours": 6 }
+  ],
+  "competencies": [
+    { "name": "Technique", "description": "Posture, tone, accuracy and economy of movement.", "target": 4 },
+    { "name": "Rhythm and tempo", "description": "Keep a steady pulse and play cleanly at the target tempo.", "target": 4 },
+    { "name": "Reading music", "description": "Read and play notation at sight at a comfortable level.", "target": 3 },
+    { "name": "Ear training", "description": "Recognise intervals, chords and melodies by ear.", "target": 3 },
+    { "name": "Repertoire", "description": "Pieces you can play from memory or without stopping.", "target": 4 },
+    { "name": "Musical expression", "description": "Dynamics, phrasing and character: playing music, not just notes.", "target": 3 }
+  ],
+  "measures": [
+    { "name": "Tempo", "unit": "bpm", "target": 120, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Rhythm and tempo" },
+    { "name": "Mistakes per run-through", "unit": "mistakes", "target": 2, "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Technique" }
+  ],
+  "routines": [
+    { "title": "Warm-up and scales", "cadence": "DAILY", "minutes": 15, "step": 3 },
+    { "title": "Focused repertoire practice", "cadence": "WEEKLY", "timesPerWeek": 5, "minutes": 30, "step": 5 },
+    { "title": "Ear training", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 10, "step": 6 }
+  ],
+  "cards": [
+    { "front": "Order of sharps in key signatures", "back": "F, C, G, D, A, E, B (Father Charles Goes Down And Ends Battle)." },
+    { "front": "Order of flats in key signatures", "back": "B, E, A, D, G, C, F: the sharps in reverse." },
+    { "front": "How many semitones in a perfect fifth?", "back": "7 semitones, for example C up to G." },
+    { "front": "Pattern of the major scale", "back": "Whole, whole, half, whole, whole, whole, half steps." },
+    { "front": "What does a 4/4 time signature mean?", "back": "Four beats in every bar, and a quarter note gets one beat." },
+    { "front": "Allegro, Andante, Adagio", "back": "Allegro: fast and lively. Andante: at a walking pace. Adagio: slow and at ease." },
+    { "front": "Dynamic marks: p, mp, mf, f", "back": "Piano (soft), mezzo piano (moderately soft), mezzo forte (moderately loud), forte (loud)." },
+    { "front": "What is the relative minor of C major?", "back": "A minor. It shares the key signature and starts on the sixth degree of the major scale." },
+    { "front": "Formula of a major triad", "back": "Root, major third (4 semitones) and perfect fifth (7 semitones)." },
+    { "front": "Formula of a minor triad", "back": "Root, minor third (3 semitones) and perfect fifth (7 semitones)." },
+    { "front": "Why practise slowly?", "back": "Slow practice builds accurate, relaxed movement that still works when you speed up. Speed is the result of practice, not the method." }
+  ]
+}

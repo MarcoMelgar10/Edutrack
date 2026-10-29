@@ -1,0 +1,43 @@
+{
+  "id": "sport-skill",
+  "name": "Sport or physical skill",
+  "description": "Learn or sharpen a physical skill (a swimming stroke, climbing, a tennis serve, skating, a martial art...): fundamentals, drills, conditioning, video feedback and a test to see your progress.",
+  "durationWeeks": 12,
+  "weeklyTargetMinutes": 240,
+  "steps": [
+    { "title": "Safety, equipment and baseline test", "description": "Get the right gear, check with a doctor if needed and record where you are now: a simple test you can repeat later.", "hours": 3 },
+    { "title": "Fundamentals and body position", "description": "Learn the basic stance, grip or posture of the skill with a coach, a good video course or a training partner.", "hours": 8 },
+    { "title": "Core movement drills", "description": "Break the skill into its simplest movements and repeat each one slowly and cleanly before adding speed or power.", "hours": 12 },
+    { "title": "Conditioning: strength, mobility and endurance", "description": "Build the physical base the skill needs, with a progressive plan of two or three sessions a week.", "hours": 16 },
+    { "title": "Put the pieces together", "description": "Combine the drills into the full movement, first slowly and then at normal pace, keeping the technique intact.", "hours": 12 },
+    { "title": "Video your technique and review it", "description": "Film yourself from two angles, compare with a reference and ask a coach or an experienced practitioner for feedback.", "hours": 4 },
+    { "title": "Skill under pressure", "description": "Use the skill in games, routes, sets, sparring or timed attempts, where fatigue and opponents test it.", "hours": 12 },
+    { "title": "Recovery and injury prevention routine", "description": "Add stretching, mobility, sleep and rest days. Learn the warning signs that tell you to stop.", "hours": 4 },
+    { "title": "Retest and set the next level", "description": "Repeat your baseline test, compare, celebrate the progress and choose the next target.", "hours": 3 }
+  ],
+  "competencies": [
+    { "name": "Technique", "description": "Correct, repeatable movement of the skill at normal pace.", "target": 4 },
+    { "name": "Conditioning", "description": "The strength, endurance and speed the skill demands.", "target": 4 },
+    { "name": "Performance under pressure", "description": "Keeping your technique when you are tired, nervous or competing.", "target": 3 },
+    { "name": "Mobility and injury prevention", "description": "Range of motion, warm-up and recovery habits that keep you training.", "target": 3 },
+    { "name": "Tactics and game sense", "description": "Reading the situation and choosing the right action.", "target": 3 }
+  ],
+  "measures": [
+    { "name": "Skill test score", "unit": "/10", "max": 10, "target": 8, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE", "competency": "Technique" },
+    { "name": "Drill time", "unit": "s", "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Conditioning" }
+  ],
+  "routines": [
+    { "title": "Technique drills", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 40, "step": 2 },
+    { "title": "Conditioning session", "cadence": "WEEKLY", "timesPerWeek": 2, "minutes": 45, "step": 3 },
+    { "title": "Mobility and cool-down", "cadence": "DAILY", "minutes": 10, "step": 7 }
+  ],
+  "cards": [
+    { "front": "What is progressive overload?", "back": "Gradually increasing the demand of training (load, volume, speed or difficulty) so the body keeps adapting." },
+    { "front": "What does the RPE scale measure?", "back": "Rating of perceived exertion, from 1 (very easy) to 10 (maximum effort). It tells you how hard a session felt." },
+    { "front": "Why warm up?", "back": "It raises body temperature and heart rate, lubricates the joints and rehearses the movements, lowering the risk of injury and improving performance." },
+    { "front": "Why film your technique?", "back": "What you feel and what you do often differ. Video shows the real movement and lets you compare it with a reference." },
+    { "front": "What is deliberate practice?", "back": "Training focused on a specific weakness, slightly beyond your current ability, with immediate feedback and full attention." },
+    { "front": "Why are rest days part of training?", "back": "The body adapts during recovery, not during the session. Plan at least one or two rest days a week and sleep enough." },
+    { "front": "What is delayed onset muscle soreness?", "back": "Muscle ache that peaks one or two days after unfamiliar effort. It is normal and passes; sharp or joint pain is not, so stop and get it checked." }
+  ]
+}

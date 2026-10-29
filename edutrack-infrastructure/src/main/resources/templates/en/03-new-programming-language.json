@@ -1,0 +1,48 @@
+{
+  "id": "new-programming-language",
+  "name": "Learn a new programming language",
+  "description": "Pick up a new language by building real things: syntax, standard library, tooling, testing and a complete final project. Works for any language, from Rust to Python to Kotlin.",
+  "durationWeeks": 10,
+  "weeklyTargetMinutes": 360,
+  "steps": [
+    { "title": "Set up the toolchain", "description": "Install the compiler or runtime, an editor with language support, a formatter, a linter and the package manager. Run a Hello world and a first test.", "hours": 3 },
+    { "title": "Syntax tour: variables, types and control flow", "description": "Work through the official tutorial. Re-type every example instead of pasting it and change it to see what breaks.", "hours": 8 },
+    { "title": "Functions, modules and error handling", "description": "Learn how code is split into files and packages, and how this language reports and handles errors.", "hours": 8 },
+    { "title": "Data structures and the standard library", "description": "Lists, maps, sets, strings, dates, files and JSON. Learn what the standard library already gives you before reaching for a package.", "hours": 10 },
+    { "title": "Type system and object model", "description": "Classes, interfaces, traits, generics or whatever this language uses to model things, and how it differs from the languages you know.", "hours": 10 },
+    { "title": "Idioms and style", "description": "Read the official style guide and the code of a well-respected project. Note what experienced developers do differently from a beginner.", "hours": 6 },
+    { "title": "Testing and debugging", "description": "Write unit tests for your katas, learn the debugger and the profiler, and measure coverage.", "hours": 8 },
+    { "title": "Concurrency or asynchronous code", "description": "Understand the model this language uses (threads, async/await, goroutines, actors) and the classic pitfalls.", "hours": 8 },
+    { "title": "Practice katas: solve familiar problems again", "description": "Re-solve about fifteen problems you already know how to solve in another language. Compare with idiomatic solutions afterwards.", "hours": 12 },
+    { "title": "Final project: small but complete", "description": "Plan, build, test and document a real tool or application. Publish it or demo it to someone.", "hours": 30 },
+    { "title": "Read a popular library and review your project", "description": "Read the source of one widely used library and refactor your project with what you learned.", "hours": 6 }
+  ],
+  "competencies": [
+    { "name": "Syntax and types", "description": "Write correct code in the language without looking up the basics.", "target": 4 },
+    { "name": "Standard library", "description": "Know what the standard library offers and use it before adding dependencies.", "target": 4 },
+    { "name": "Tooling and testing", "description": "Build, test, debug, format and package projects with the language's tools.", "target": 4 },
+    { "name": "Idiomatic style", "description": "Write code that other developers of this language find natural to read.", "target": 3 },
+    { "name": "Building projects", "description": "Design and finish a complete program, not only exercises.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Kata solving time", "unit": "min", "target": 30, "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Syntax and types" },
+    { "name": "Test coverage", "unit": "%", "max": 100, "target": 80, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Tooling and testing" }
+  ],
+  "routines": [
+    { "title": "Daily coding practice", "cadence": "DAILY", "minutes": 30, "step": 8 },
+    { "title": "Read code from a good project", "cadence": "WEEKLY", "timesPerWeek": 2, "minutes": 30, "step": 5 },
+    { "title": "Work on the final project", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 60, "step": 9 }
+  ],
+  "cards": [
+    { "front": "What is a closure?", "back": "A function bundled with the variables of the scope where it was created, so it can keep using them even when called elsewhere." },
+    { "front": "Stack vs heap", "back": "The stack holds call frames and local values, allocated and freed automatically in order. The heap holds objects that live as long as something refers to them or until they are freed." },
+    { "front": "Why prefer immutable data?", "back": "It cannot change under your feet: easier to reason about, safe to share between threads and simple to test." },
+    { "front": "What does every recursive function need?", "back": "A base case that stops the recursion, and a step that moves each call closer to that base case." },
+    { "front": "Time complexity of binary search", "back": "O(log n), on sorted data: each comparison halves the remaining search space." },
+    { "front": "What is a pure function?", "back": "A function whose result depends only on its arguments and which has no side effects. The same input always gives the same output." },
+    { "front": "What is an idempotent operation?", "back": "One that can be repeated with the same effect as doing it once, for example setting a value, as opposed to incrementing it." },
+    { "front": "What is a race condition?", "back": "A bug where the result depends on the unpredictable timing of two or more threads or tasks accessing shared state." },
+    { "front": "Compiled vs interpreted languages", "back": "Compiled code is translated to machine code or bytecode before running; interpreted code is executed by another program line by line. Many languages mix both." },
+    { "front": "Value vs reference semantics", "back": "With value semantics, assignment copies the data. With reference semantics, assignment copies a pointer, so both names see the same object." }
+  ]
+}

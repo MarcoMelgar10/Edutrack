@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.edutrack.desktop.ui.insights.InsightsController"
+            fitToWidth="true" styleClass="page-scroll">
+    <VBox styleClass="page" spacing="16">
+        <padding>
+            <Insets top="24" right="32" bottom="24" left="32"/>
+        </padding>
+
+        <Label text="%nav.insights" styleClass="text-title"/>
+        <Label text="%insights.caption" styleClass="text-caption"/>
+
+        <VBox fx:id="chartsHost"/>
+
+        <Label text="%insights.areas.title" styleClass="section-label"/>
+        <VBox fx:id="areaList" styleClass="area-list"/>
+        <Label fx:id="emptyLabel" text="%insights.empty" styleClass="text-caption"/>
+    </VBox>
+</ScrollPane>

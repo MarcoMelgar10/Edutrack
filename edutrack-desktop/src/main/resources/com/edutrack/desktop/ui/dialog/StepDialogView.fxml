@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.edutrack.desktop.ui.dialog.StepDialogController"
+      styleClass="form" spacing="16" prefWidth="460">
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%form.title" styleClass="form-label"/>
+        <TextField fx:id="titleField" promptText="%dialog.step.titlePrompt"/>
+    </VBox>
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%form.description" styleClass="form-label"/>
+        <TextArea fx:id="descriptionField" promptText="%form.optional" prefRowCount="2" wrapText="true"/>
+    </VBox>
+
+    <HBox spacing="16">
+        <VBox styleClass="form-field" spacing="6">
+            <Label text="%form.estimatedHours" styleClass="form-label"/>
+            <TextField fx:id="hoursField" promptText="%dialog.step.hoursPrompt" prefColumnCount="8"/>
+        </VBox>
+        <VBox styleClass="form-field" spacing="6">
+            <Label text="%form.status" styleClass="form-label"/>
+            <ComboBox fx:id="statusBox" prefWidth="160"/>
+        </VBox>
+    </HBox>
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%dialog.step.planned" styleClass="form-label"/>
+        <DatePicker fx:id="plannedPicker" promptText="%dialog.step.plannedPrompt" maxWidth="Infinity"/>
+    </VBox>
+
+    <Label fx:id="hoursHint" styleClass="form-hint" wrapText="true"/>
+    <Label fx:id="errorLabel" styleClass="form-error" wrapText="true"/>
+</VBox>

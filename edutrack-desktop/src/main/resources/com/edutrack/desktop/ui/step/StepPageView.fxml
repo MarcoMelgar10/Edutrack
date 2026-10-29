@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.edutrack.desktop.ui.notes.NoteEditor?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:id="root" fx:controller="com.edutrack.desktop.ui.step.StepPageController"
+      styleClass="step-page">
+
+    <VBox styleClass="step-page-header" spacing="8">
+        <padding>
+            <Insets top="20" right="28" bottom="8" left="28"/>
+        </padding>
+
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Hyperlink fx:id="backLink" styleClass="breadcrumb-link" onAction="#back"/>
+            <Label text="›" styleClass="text-caption"/>
+            <Label fx:id="crumbStepLabel" styleClass="text-caption"/>
+        </HBox>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <!-- The StepMark is added to the button in code. -->
+            <Button fx:id="markButton" styleClass="step-mark-button" onAction="#cycleStatus">
+                <tooltip>
+                    <Tooltip text="%step.changeStatus"/>
+                </tooltip>
+            </Button>
+            <Label fx:id="titleLabel" styleClass="text-title" textOverrun="ELLIPSIS" HBox.hgrow="ALWAYS"/>
+            <Label fx:id="statusLabel" styleClass="text-caption"/>
+            <!-- Hides the goal list so this page fills the window; icon and tooltip are set in code. -->
+            <Button fx:id="expandButton" styleClass="icon-button" minWidth="-Infinity" onAction="#toggleExpanded"/>
+        </HBox>
+    </VBox>
+
+    <TabPane fx:id="tabs" styleClass="record-tabs" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <Tab fx:id="notesTab" text="%step.tab.notes">
+            <VBox spacing="8">
+                <padding>
+                    <Insets top="12" right="28" bottom="16" left="28"/>
+                </padding>
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="saveStateLabel" styleClass="save-state"/>
+                </HBox>
+                <NoteEditor fx:id="notesEditor" VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </Tab>
+
+        <Tab fx:id="resourcesTab" text="%step.tab.resources">
+            <VBox spacing="8">
+                <padding>
+                    <Insets top="12" right="28" bottom="16" left="28"/>
+                </padding>
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label text="%step.resources.hint"
+                           styleClass="text-caption"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="addResourceButton" text="%step.resources.add" onAction="#addResource"/>
+                </HBox>
+                <ListView fx:id="resourceList" styleClass="record-list" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label text="%step.resources.empty" styleClass="text-caption"/>
+                    </placeholder>
+                </ListView>
+            </VBox>
+        </Tab>
+
+        <Tab fx:id="exercisesTab" text="%step.tab.exercises">
+            <VBox spacing="8">
+                <padding>
+                    <Insets top="12" right="28" bottom="16" left="28"/>
+                </padding>
+                <Label text="%step.exercises.hint" styleClass="text-caption"/>
+                <ListView fx:id="exerciseList" styleClass="record-list" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label text="%step.exercises.empty" styleClass="text-caption"/>
+                    </placeholder>
+                </ListView>
+                <HBox spacing="8">
+                    <TextField fx:id="exerciseInput" styleClass="exercise-input"
+                               promptText="%step.exercises.prompt" onAction="#addExercise"
+                               HBox.hgrow="ALWAYS"/>
+                    <Button text="%common.add" onAction="#addExercise"/>
+                </HBox>
+                <Label fx:id="exerciseErrorLabel" styleClass="form-error" wrapText="true"/>
+            </VBox>
+        </Tab>
+
+        <Tab fx:id="resultsTab" text="%step.tab.results">
+            <VBox spacing="8">
+                <padding>
+                    <Insets top="12" right="28" bottom="16" left="28"/>
+                </padding>
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label text="%step.results.hint" styleClass="text-caption"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="addResultButton" text="%step.results.add" onAction="#addResult"/>
+                </HBox>
+                <ListView fx:id="resultList" styleClass="record-list" VBox.vgrow="ALWAYS">
+                    <placeholder>
+                        <Label text="%step.results.empty" styleClass="text-caption"/>
+                    </placeholder>
+                </ListView>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

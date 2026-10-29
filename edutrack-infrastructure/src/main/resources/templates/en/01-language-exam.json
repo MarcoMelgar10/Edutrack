@@ -1,0 +1,48 @@
+{
+  "id": "language-exam",
+  "name": "Language exam preparation",
+  "description": "Level up a language and pass an official exam (IELTS, TOEFL, DELE, DELF, Goethe, JLPT...). Covers the four skills, vocabulary, grammar and timed mock exams, and ends with an exam week.",
+  "durationWeeks": 16,
+  "weeklyTargetMinutes": 420,
+  "steps": [
+    { "title": "Diagnose your level and choose the exam", "description": "Take a free placement test, read the exam format and scoring, and decide the exam date and the score you need.", "hours": 4 },
+    { "title": "Set up your study system", "description": "Choose a course book, an app and a notebook, plan a weekly timetable and create your vocabulary deck.", "hours": 3 },
+    { "title": "Core grammar review", "description": "Revise the structures the exam relies on: tenses, conditionals, connectors, reported speech. Do exercises after each topic.", "hours": 14 },
+    { "title": "Vocabulary: the first 1,000 words", "description": "Learn high-frequency and exam-topic words in context, with example sentences, and review them daily with flashcards.", "hours": 16 },
+    { "title": "Listening skills", "description": "Train with exam-style recordings: predict answers, catch synonyms, practise note-taking and dictation.", "hours": 16 },
+    { "title": "Reading skills", "description": "Practise skimming, scanning and inference on exam texts. Time every exercise and review each wrong answer.", "hours": 14 },
+    { "title": "Writing skills", "description": "Learn the structure of each task type, write one text a week and get it corrected or compare it with model answers.", "hours": 16 },
+    { "title": "Speaking skills", "description": "Record yourself answering exam questions, shadow native speakers and practise with a partner or tutor.", "hours": 16 },
+    { "title": "Timed mock exam 1 and error analysis", "description": "Sit a full mock exam in real conditions, then sort every mistake by cause: knowledge, timing or carelessness.", "hours": 8 },
+    { "title": "Targeted weak-spot training", "description": "Spend the time where the mock exam showed the biggest losses instead of what feels comfortable.", "hours": 18 },
+    { "title": "Timed mock exams 2 and 3", "description": "Two more full mock exams, a week apart, with the same analysis. Aim for a margin above the score you need.", "hours": 10 },
+    { "title": "Exam week: logistics and light review", "description": "Check documents, route and rules, sleep well and only review summaries and flashcards.", "hours": 6 }
+  ],
+  "competencies": [
+    { "name": "Listening", "description": "Understand recordings at exam speed and pick out the detail the questions ask for.", "target": 4 },
+    { "name": "Reading", "description": "Read exam texts within the time limit and answer inference questions.", "target": 4 },
+    { "name": "Writing", "description": "Write clear, well-organised texts of the required type and length with few errors.", "target": 4 },
+    { "name": "Speaking", "description": "Answer spontaneously, develop ideas with examples and be easy to understand.", "target": 4 },
+    { "name": "Vocabulary and grammar", "description": "Range and accuracy of the words and structures you can use without thinking.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Mock exam", "unit": "%", "max": 100, "target": 75, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE" },
+    { "name": "Writing errors per essay", "unit": "errors", "target": 5, "direction": "LOWER_IS_BETTER", "combine": "NONE", "competency": "Writing" }
+  ],
+  "routines": [
+    { "title": "Vocabulary flashcards", "cadence": "DAILY", "minutes": 15, "step": 3 },
+    { "title": "Listening practice", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 30, "step": 4 },
+    { "title": "Speaking practice (partner or recording)", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 25, "step": 7 }
+  ],
+  "cards": [
+    { "front": "CEFR A1 and A2: what can you do?", "back": "Basic user: understand and use everyday expressions, introduce yourself and ask and answer simple questions on familiar topics." },
+    { "front": "CEFR B1: what can you do?", "back": "Independent user: deal with most travel situations, describe experiences and plans, and give brief reasons and opinions." },
+    { "front": "CEFR B2: what can you do?", "back": "Understand the main ideas of complex texts, interact with native speakers without strain and write clear, detailed text." },
+    { "front": "CEFR C1: what can you do?", "back": "Proficient user: understand demanding long texts, express ideas fluently and spontaneously and use the language flexibly for work and study." },
+    { "front": "CEFR C2: what can you do?", "back": "Understand virtually everything heard or read, summarise information from several sources and express yourself precisely, with fine shades of meaning." },
+    { "front": "How do you approach a listening task with questions?", "back": "Read the questions first, predict the type of answer, listen for synonyms of the question words and never leave an answer blank." },
+    { "front": "How should you use the first minutes of a writing task?", "back": "Plan for about five minutes: position, two arguments with examples, conclusion. Keep the last few minutes to check grammar, spelling and word count." },
+    { "front": "What do examiners reward in the speaking test?", "back": "Fluency and coherence, range of vocabulary, range and accuracy of grammar, and pronunciation. Extend answers with reasons and examples." },
+    { "front": "Why do timed mock exams matter?", "back": "They train timing, stamina and technique. Review every mistake and write down the rule behind it." }
+  ]
+}

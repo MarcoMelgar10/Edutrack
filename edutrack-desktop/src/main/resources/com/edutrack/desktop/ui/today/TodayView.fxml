@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.edutrack.desktop.ui.today.TodayController"
+            fitToWidth="true" styleClass="page-scroll">
+    <VBox styleClass="page" spacing="16">
+        <padding>
+            <Insets top="24" right="32" bottom="24" left="32"/>
+        </padding>
+
+        <Label text="%nav.today" styleClass="text-title"/>
+        <Label fx:id="dateLabel" styleClass="text-caption"/>
+
+        <HBox fx:id="headerRow" alignment="CENTER_LEFT" spacing="8">
+            <Label fx:id="streakLabel" styleClass="streak-chip"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="%session.start" styleClass="accent" onAction="#startSession"/>
+            <Button text="%session.log" onAction="#logSession"/>
+        </HBox>
+
+        <VBox fx:id="sections" spacing="20"/>
+
+        <VBox fx:id="welcome" styleClass="empty-state" alignment="CENTER" spacing="8">
+            <Label text="%welcome.title" styleClass="text-heading"/>
+            <Label text="%welcome.hint" styleClass="text-caption"/>
+            <HBox alignment="CENTER" spacing="8">
+                <padding>
+                    <Insets top="8"/>
+                </padding>
+                <Button text="%welcome.suggested" styleClass="accent" onAction="#addSuggestedAreas">
+                    <tooltip>
+                        <Tooltip text="%welcome.suggested.tooltip"/>
+                    </tooltip>
+                </Button>
+                <Button text="%shell.newAreaButton" onAction="#newArea"/>
+            </HBox>
+        </VBox>
+
+        <VBox fx:id="goalsSection" spacing="8">
+            <Label text="%today.goals.section" styleClass="section-label"/>
+            <VBox fx:id="goalList" styleClass="area-list"/>
+            <Label fx:id="noGoalsLabel" text="%today.goals.empty" styleClass="text-caption"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

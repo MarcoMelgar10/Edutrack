@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.edutrack.desktop.ui.search.SearchController"
+            fitToWidth="true" styleClass="page-scroll">
+    <VBox styleClass="page" spacing="16">
+        <padding>
+            <Insets top="24" right="32" bottom="24" left="32"/>
+        </padding>
+
+        <Label text="%nav.search" styleClass="text-title"/>
+        <TextField fx:id="queryField" styleClass="search-field" promptText="%search.prompt"/>
+        <Label fx:id="statusLabel" styleClass="text-caption"/>
+        <VBox fx:id="results" spacing="20"/>
+    </VBox>
+</ScrollPane>

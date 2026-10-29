@@ -1,0 +1,46 @@
+{
+  "id": "university-course",
+  "name": "University course",
+  "description": "Pass a university course with a calm, steady plan: map the syllabus, study each unit as it is taught, practise with past exams and arrive at the final exam prepared. Set the goal's deadline to your exam date.",
+  "durationWeeks": 14,
+  "weeklyTargetMinutes": 480,
+  "steps": [
+    { "title": "Read the syllabus and set up the term", "description": "Note the grading scheme, deadlines, required readings, office hours and the exam date. Find out what the exam looks like.", "hours": 2 },
+    { "title": "Plan the term in your calendar", "description": "Put every lecture, assignment and exam in your calendar and reserve fixed weekly study blocks for this course.", "hours": 2 },
+    { "title": "Unit 1: study and exercises", "description": "Read before the lecture, take notes in class, rewrite them the same day and solve the exercises for the unit.", "hours": 12 },
+    { "title": "Unit 2: study and exercises", "description": "Read before the lecture, take notes in class, rewrite them the same day and solve the exercises for the unit.", "hours": 12 },
+    { "title": "Unit 3: study and exercises", "description": "Read before the lecture, take notes in class, rewrite them the same day and solve the exercises for the unit.", "hours": 12 },
+    { "title": "Midterm preparation", "description": "Review units 1 to 3 with active recall, solve a past midterm under time pressure and fix the gaps.", "hours": 14 },
+    { "title": "Unit 4: study and exercises", "description": "Read before the lecture, take notes in class, rewrite them the same day and solve the exercises for the unit.", "hours": 12 },
+    { "title": "Unit 5: study and exercises", "description": "Read before the lecture, take notes in class, rewrite them the same day and solve the exercises for the unit.", "hours": 12 },
+    { "title": "Assignments and projects", "description": "Start each assignment as soon as it is announced, finish a draft early and use office hours for the parts you are stuck on.", "hours": 20 },
+    { "title": "Past exams and exam-style practice", "description": "Solve as many past exams as you can find, in exam conditions. Mark them strictly and list the topics behind each lost point.", "hours": 16 },
+    { "title": "Consolidation: summary sheets and concept maps", "description": "Condense the course into one-page summaries, formula sheets or concept maps you could rebuild from memory.", "hours": 10 },
+    { "title": "Final exam week", "description": "Alternate full past papers with targeted review of weak topics, keep sleeping and eating well and stop studying the evening before.", "hours": 12 }
+  ],
+  "competencies": [
+    { "name": "Understanding of concepts", "description": "Explain the core ideas of the course in your own words and connect them to each other.", "target": 4 },
+    { "name": "Problem solving", "description": "Solve new exercises of the types the exam uses, within the time limit.", "target": 4 },
+    { "name": "Written explanations", "description": "Justify answers clearly and completely, the way the marking scheme rewards.", "target": 3 },
+    { "name": "Exam technique", "description": "Plan the time, choose the order of questions and check answers before handing in.", "target": 4 },
+    { "name": "Study habits", "description": "Keep a steady weekly rhythm of reading, review and practice instead of cramming.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Exam grade", "unit": "%", "max": 100, "target": 70, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Exam technique" },
+    { "name": "Practice problem accuracy", "unit": "%", "max": 100, "target": 80, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Problem solving" }
+  ],
+  "routines": [
+    { "title": "Review the lecture notes", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 30 },
+    { "title": "Problem-solving session", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 60 },
+    { "title": "Weekly review of the whole course", "cadence": "WEEKLY", "timesPerWeek": 1, "minutes": 45, "step": 1 }
+  ],
+  "cards": [
+    { "front": "What is active recall?", "back": "Testing yourself without looking at your notes. It beats rereading because retrieving a memory strengthens it." },
+    { "front": "What is spaced repetition?", "back": "Reviewing material at growing intervals (1 day, 3 days, 1 week...) just before you would forget it, so it sticks for much less total time." },
+    { "front": "What is the Feynman technique?", "back": "Explain the concept in plain words as if teaching a beginner. Wherever you stumble is what you still have to study." },
+    { "front": "What is the Pomodoro technique?", "back": "Work in focused blocks of about 25 minutes separated by 5-minute breaks, with a longer break every four blocks." },
+    { "front": "What is interleaving?", "back": "Mixing different topics or problem types in one study session instead of repeating a single type. It feels harder and works better." },
+    { "front": "Why start from past exams?", "back": "They show what the exam really asks, at which depth and in which format, so you can aim your studying at it." },
+    { "front": "How do you use a mistake?", "back": "Write down the correct method and the reason you went wrong, then redo the problem a few days later without looking." }
+  ]
+}

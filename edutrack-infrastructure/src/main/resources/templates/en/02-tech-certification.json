@@ -1,0 +1,49 @@
+{
+  "id": "tech-certification",
+  "name": "Technology certification",
+  "description": "Prepare for a vendor or industry certification (cloud, security, networking, data, project management...). Map the exam objectives, learn each domain with hands-on labs and finish with timed practice exams.",
+  "durationWeeks": 12,
+  "weeklyTargetMinutes": 360,
+  "steps": [
+    { "title": "Read the exam guide and map the objectives", "description": "Download the official exam guide. List every domain with its weighting and turn each objective into a checkbox you can tick.", "hours": 3 },
+    { "title": "Choose resources and book the exam", "description": "Pick one main course, one source of practice questions and the official documentation. Book the exam date: a deadline makes the plan real.", "hours": 2 },
+    { "title": "Set up a hands-on lab", "description": "Create a free account or a local sandbox where you can build, break and rebuild things safely.", "hours": 3 },
+    { "title": "Domain 1: the most heavily weighted", "description": "Study the concepts, then do a lab for every objective. Write a short summary in your own words.", "hours": 14 },
+    { "title": "Domain 2", "description": "Concepts first, then labs, then a quiz on the domain. Add what you got wrong to your flashcards.", "hours": 12 },
+    { "title": "Domain 3", "description": "Concepts first, then labs, then a quiz on the domain. Add what you got wrong to your flashcards.", "hours": 12 },
+    { "title": "Remaining domains", "description": "Cover the lighter domains. They are cheaper points per hour than the hard parts of the big ones.", "hours": 12 },
+    { "title": "One-page summaries and fact flashcards", "description": "Condense limits, defaults, commands, port numbers and service names into one page per domain and into flashcards.", "hours": 6 },
+    { "title": "Practice exam 1 and gap analysis", "description": "Take a full practice exam in exam conditions. For every wrong answer note the objective it belongs to and why you missed it.", "hours": 5 },
+    { "title": "Fix the weak domains with targeted labs", "description": "Go back to the objectives where you lost points. Do the lab again without the guide.", "hours": 12 },
+    { "title": "Practice exams 2 and 3 under real conditions", "description": "Same time limit, no notes, no pauses. Aim for a clear margin above the passing score.", "hours": 6 },
+    { "title": "Exam day logistics and last review", "description": "Check ID, the test centre or online proctoring requirements and the route. Review summaries only and sleep well.", "hours": 3 }
+  ],
+  "competencies": [
+    { "name": "Core concepts", "description": "Explain what each service or technology does, when to use it and its trade-offs.", "target": 4 },
+    { "name": "Hands-on skills", "description": "Build and configure things from scratch without following a tutorial.", "target": 4 },
+    { "name": "Troubleshooting", "description": "Diagnose why something does not work from symptoms, logs and documentation.", "target": 3 },
+    { "name": "Security and best practices", "description": "Apply least privilege, encryption, monitoring and cost awareness by default.", "target": 4 },
+    { "name": "Exam technique", "description": "Read scenario questions carefully, eliminate wrong options and manage the clock.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Practice exam score", "unit": "%", "max": 100, "target": 80, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Exam technique" },
+    { "name": "Domain quiz accuracy", "unit": "%", "max": 100, "target": 85, "direction": "HIGHER_IS_BETTER", "combine": "AVERAGE", "competency": "Core concepts" }
+  ],
+  "routines": [
+    { "title": "Flashcard review", "cadence": "DAILY", "minutes": 15, "step": 7 },
+    { "title": "Hands-on lab session", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 60, "step": 2 },
+    { "title": "Practice questions", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 30 }
+  ],
+  "cards": [
+    { "front": "What is a domain weighting in an exam guide?", "back": "The percentage of exam questions that come from a domain. Spend your study time roughly in proportion to it." },
+    { "front": "How should you attack a long scenario question?", "back": "Read the last sentence first to see what is asked, then mark the constraints (cost, security, time, scale) and eliminate options that break them." },
+    { "front": "Why flag a hard question and move on?", "back": "Minutes spent on one hard question are lost for several easy ones. Flag it, finish the exam, then return with the time left." },
+    { "front": "What does least privilege mean?", "back": "Give every user, service or process only the permissions it needs to do its job, and nothing more." },
+    { "front": "High availability vs disaster recovery", "back": "High availability keeps a service running through component failures (redundancy). Disaster recovery restores service after a major outage (backups, failover site)." },
+    { "front": "RTO vs RPO", "back": "RTO (recovery time objective): how long you can be down. RPO (recovery point objective): how much data you can lose, measured in time." },
+    { "front": "Encryption at rest vs in transit", "back": "At rest protects stored data (disks, backups, databases). In transit protects data moving over a network (TLS)." },
+    { "front": "Vertical vs horizontal scaling", "back": "Vertical: give one machine more CPU or memory. Horizontal: add more machines behind a load balancer. Horizontal also improves availability." },
+    { "front": "What is the shared responsibility model?", "back": "The provider secures the platform itself; you secure what you put on it: data, identities, configuration and access." },
+    { "front": "Why redo a lab without the guide?", "back": "Following steps proves you can read. Repeating it from memory proves you can do it, which is what scenario questions test." }
+  ]
+}

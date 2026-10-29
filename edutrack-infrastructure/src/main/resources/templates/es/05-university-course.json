@@ -1,0 +1,46 @@
+{
+  "id": "university-course",
+  "name": "Asignatura universitaria",
+  "description": "Aprueba una asignatura universitaria con un plan tranquilo y constante: mapea el temario, estudia cada tema a medida que se imparte, practica con exámenes anteriores y llega preparado al examen final. Pon como fecha límite del objetivo el día de tu examen.",
+  "durationWeeks": 14,
+  "weeklyTargetMinutes": 480,
+  "steps": [
+    { "title": "Lee el programa de la asignatura y organiza el curso", "description": "Anota el sistema de evaluación, las fechas de entrega, las lecturas obligatorias, las horas de tutoría y la fecha del examen. Averigua cómo es el examen.", "hours": 2 },
+    { "title": "Planifica el curso en tu calendario", "description": "Pon en el calendario cada clase, entrega y examen, y reserva bloques semanales fijos de estudio para esta asignatura.", "hours": 2 },
+    { "title": "Tema 1: estudio y ejercicios", "description": "Lee antes de la clase, toma apuntes durante ella, pásalos a limpio el mismo día y resuelve los ejercicios del tema.", "hours": 12 },
+    { "title": "Tema 2: estudio y ejercicios", "description": "Lee antes de la clase, toma apuntes durante ella, pásalos a limpio el mismo día y resuelve los ejercicios del tema.", "hours": 12 },
+    { "title": "Tema 3: estudio y ejercicios", "description": "Lee antes de la clase, toma apuntes durante ella, pásalos a limpio el mismo día y resuelve los ejercicios del tema.", "hours": 12 },
+    { "title": "Preparación del parcial", "description": "Repasa los temas 1 a 3 con recuerdo activo, resuelve un parcial anterior con límite de tiempo y corrige los huecos.", "hours": 14 },
+    { "title": "Tema 4: estudio y ejercicios", "description": "Lee antes de la clase, toma apuntes durante ella, pásalos a limpio el mismo día y resuelve los ejercicios del tema.", "hours": 12 },
+    { "title": "Tema 5: estudio y ejercicios", "description": "Lee antes de la clase, toma apuntes durante ella, pásalos a limpio el mismo día y resuelve los ejercicios del tema.", "hours": 12 },
+    { "title": "Trabajos y proyectos", "description": "Empieza cada trabajo en cuanto se anuncie, termina un borrador con antelación y usa las tutorías para las partes en las que te atasques.", "hours": 20 },
+    { "title": "Exámenes anteriores y práctica al estilo del examen", "description": "Resuelve todos los exámenes anteriores que encuentres, en condiciones de examen. Corrígelos con rigor y anota los temas detrás de cada punto perdido.", "hours": 16 },
+    { "title": "Consolidación: resúmenes y mapas conceptuales", "description": "Condensa la asignatura en resúmenes de una página, hojas de fórmulas o mapas conceptuales que podrías reconstruir de memoria.", "hours": 10 },
+    { "title": "Semana del examen final", "description": "Alterna exámenes completos anteriores con repaso dirigido de los temas débiles, sigue durmiendo y comiendo bien, y deja de estudiar la tarde anterior.", "hours": 12 }
+  ],
+  "competencies": [
+    { "name": "Comprensión de conceptos", "description": "Explicar con tus palabras las ideas centrales de la asignatura y relacionarlas entre sí.", "target": 4 },
+    { "name": "Resolución de problemas", "description": "Resolver ejercicios nuevos de los tipos que usa el examen, dentro del tiempo límite.", "target": 4 },
+    { "name": "Explicaciones escritas", "description": "Justificar las respuestas con claridad y de forma completa, como premia el criterio de corrección.", "target": 3 },
+    { "name": "Técnica de examen", "description": "Planificar el tiempo, elegir el orden de las preguntas y revisar las respuestas antes de entregar.", "target": 4 },
+    { "name": "Hábitos de estudio", "description": "Mantener un ritmo semanal constante de lectura, repaso y práctica en lugar de estudiar a última hora.", "target": 4 }
+  ],
+  "measures": [
+    { "name": "Nota del examen", "unit": "%", "max": 100, "target": 70, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Técnica de examen" },
+    { "name": "Acierto en problemas de práctica", "unit": "%", "max": 100, "target": 80, "direction": "HIGHER_IS_BETTER", "combine": "NONE", "competency": "Resolución de problemas" }
+  ],
+  "routines": [
+    { "title": "Repasar los apuntes de clase", "cadence": "WEEKLY", "timesPerWeek": 4, "minutes": 30 },
+    { "title": "Sesión de resolución de problemas", "cadence": "WEEKLY", "timesPerWeek": 3, "minutes": 60 },
+    { "title": "Repaso semanal de toda la asignatura", "cadence": "WEEKLY", "timesPerWeek": 1, "minutes": 45, "step": 1 }
+  ],
+  "cards": [
+    { "front": "¿Qué es el recuerdo activo?", "back": "Ponerte a prueba sin mirar los apuntes. Es mejor que releer porque recuperar un recuerdo lo refuerza." },
+    { "front": "¿Qué es la repetición espaciada?", "back": "Repasar el material a intervalos crecientes (1 día, 3 días, 1 semana...) justo antes de olvidarlo, de modo que se fije con mucho menos tiempo total." },
+    { "front": "¿Qué es la técnica Feynman?", "back": "Explicar el concepto con palabras sencillas como si enseñaras a un principiante. Donde tropiezas es lo que aún debes estudiar." },
+    { "front": "¿Qué es la técnica Pomodoro?", "back": "Trabajar en bloques concentrados de unos 25 minutos separados por pausas de 5 minutos, con una pausa más larga cada cuatro bloques." },
+    { "front": "¿Qué es el aprendizaje intercalado?", "back": "Mezclar distintos temas o tipos de problema en una misma sesión de estudio en lugar de repetir un solo tipo. Cuesta más y funciona mejor." },
+    { "front": "¿Por qué empezar por los exámenes anteriores?", "back": "Muestran qué pregunta realmente el examen, con qué profundidad y en qué formato, para que dirijas tu estudio hacia ello." },
+    { "front": "¿Cómo aprovechar un error?", "back": "Anota el método correcto y el motivo por el que fallaste, y rehaz el problema unos días después sin mirar." }
+  ]
+}

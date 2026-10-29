@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.edutrack.desktop.ui.markdown.MarkdownView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<!-- The journal: the entries on the left, the selected one (or its editor) on the right. -->
+<HBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.edutrack.desktop.ui.journal.JournalController" styleClass="journal-page">
+
+    <VBox fx:id="listPane" styleClass="journal-list-pane" spacing="12" prefWidth="380" minWidth="320" maxWidth="440">
+        <padding>
+            <Insets top="24" right="16" bottom="16" left="24"/>
+        </padding>
+
+        <Label text="%nav.journal" styleClass="text-title"/>
+
+        <HBox spacing="8">
+            <Button fx:id="newNoteButton" text="%journal.newNote" styleClass="accent" onAction="#newNote"/>
+            <Button fx:id="checkInButton" text="%journal.checkIn" onAction="#newCheckIn"/>
+        </HBox>
+
+        <VBox fx:id="filters" spacing="8">
+            <HBox spacing="8">
+                <ComboBox fx:id="areaBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <ComboBox fx:id="goalBox" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+            </HBox>
+            <HBox fx:id="kindRow">
+                <ToggleButton fx:id="kindAll" text="%journal.kind.all" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <ToggleButton fx:id="kindNotes" text="%journal.kind.notes" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                <ToggleButton fx:id="kindCheckIns" text="%journal.kind.checkIns" HBox.hgrow="ALWAYS"
+                              maxWidth="Infinity"/>
+            </HBox>
+        </VBox>
+
+        <ListView fx:id="entryList" styleClass="record-list, journal-list" VBox.vgrow="ALWAYS">
+            <placeholder>
+                <Label text="%journal.list.empty" styleClass="text-caption"/>
+            </placeholder>
+        </ListView>
+    </VBox>
+
+    <StackPane HBox.hgrow="ALWAYS" styleClass="journal-detail">
+
+        <VBox fx:id="emptyPane" alignment="CENTER" spacing="4">
+            <Label text="%journal.empty.title" styleClass="text-heading"/>
+            <Label text="%journal.empty.hint" styleClass="text-caption" wrapText="true" maxWidth="360"
+                   textAlignment="CENTER"/>
+        </VBox>
+
+        <VBox fx:id="readPane" spacing="12">
+            <padding>
+                <Insets top="24" right="28" bottom="16" left="28"/>
+            </padding>
+            <HBox fx:id="readHeader" alignment="TOP_LEFT" spacing="8">
+                <!-- The kind icon is added in code, in front of the title. -->
+                <Label fx:id="readTitle" styleClass="text-title" wrapText="true" maxWidth="Infinity"
+                       HBox.hgrow="ALWAYS"/>
+                <Button text="%common.edit" styleClass="flat" minWidth="-Infinity" onAction="#edit"/>
+                <Button text="%common.delete" styleClass="flat, danger-text" minWidth="-Infinity"
+                        onAction="#delete"/>
+            </HBox>
+            <Label fx:id="readMeta" styleClass="text-caption" wrapText="true"/>
+            <HBox fx:id="checkInMeta" alignment="CENTER_LEFT" spacing="10">
+                <!-- The confidence dots are added in code. -->
+                <Label fx:id="confidenceLabel" styleClass="record-item-title"/>
+                <Label fx:id="readWeek" styleClass="text-caption"/>
+            </HBox>
+            <ScrollPane styleClass="notes-preview-scroll" fitToWidth="true" VBox.vgrow="ALWAYS">
+                <MarkdownView fx:id="readBody" styleClass="notes-preview"/>
+            </ScrollPane>
+        </VBox>
+
+        <VBox fx:id="editPane" spacing="12">
+            <padding>
+                <Insets top="24" right="28" bottom="16" left="28"/>
+            </padding>
+            <Label fx:id="editorTitleLabel" styleClass="text-title"/>
+
+            <HBox spacing="12">
+                <VBox spacing="6">
+                    <Label text="%form.date" styleClass="form-label"/>
+                    <DatePicker fx:id="datePicker" promptText="%dialog.result.datePrompt" prefWidth="180"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="%form.title" styleClass="form-label"/>
+                    <TextField fx:id="titleField" promptText="%journal.titlePrompt"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="12">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="%journal.link.area" styleClass="form-label"/>
+                    <ComboBox fx:id="editAreaBox" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="%journal.link.goal" styleClass="form-label"/>
+                    <ComboBox fx:id="editGoalBox" maxWidth="Infinity"/>
+                </VBox>
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="%journal.link.step" styleClass="form-label"/>
+                    <ComboBox fx:id="editStepBox" maxWidth="Infinity"/>
+                </VBox>
+            </HBox>
+
+            <VBox fx:id="checkInFields" spacing="6">
+                <Label text="%journal.confidence" styleClass="form-label"/>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="%journal.confidence.low" styleClass="text-caption"/>
+                    <!-- The five level buttons are added in code. -->
+                    <HBox fx:id="confidenceButtons"/>
+                    <Label text="%journal.confidence.high" styleClass="text-caption"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Label fx:id="weekLabel" styleClass="text-caption"/>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="6" VBox.vgrow="ALWAYS">
+                <Label text="%form.note" styleClass="form-label"/>
+                <!-- The body editor comes from NoteEditors and is added in code. -->
+                <StackPane fx:id="editorHost" VBox.vgrow="ALWAYS"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" styleClass="form-error" wrapText="true"/>
+
+            <HBox spacing="8" alignment="CENTER_RIGHT">
+                <Button text="%common.cancel" onAction="#cancel"/>
+                <Button fx:id="saveButton" text="%journal.save" styleClass="accent" onAction="#save"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+</HBox>

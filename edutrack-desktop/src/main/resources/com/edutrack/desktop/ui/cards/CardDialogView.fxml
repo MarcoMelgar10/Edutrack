@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.edutrack.desktop.ui.cards.MarkdownField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.edutrack.desktop.ui.cards.CardDialogController"
+      styleClass="form" spacing="14" prefWidth="520">
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%cards.front" styleClass="form-label"/>
+        <MarkdownField fx:id="frontField" promptText="%cards.front.prompt" rows="3"/>
+    </VBox>
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%cards.back" styleClass="form-label"/>
+        <MarkdownField fx:id="backField" promptText="%cards.back.prompt" rows="3"/>
+    </VBox>
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%cards.tags" styleClass="form-label"/>
+        <TextField fx:id="tagsField" promptText="%cards.tags.prompt"/>
+    </VBox>
+
+    <VBox styleClass="form-field" spacing="6">
+        <Label text="%cards.step" styleClass="form-label"/>
+        <ComboBox fx:id="stepBox" maxWidth="Infinity"/>
+    </VBox>
+
+    <CheckBox fx:id="reversibleBox" text="%cards.reversible"/>
+
+    <Label fx:id="errorLabel" styleClass="form-error" wrapText="true"/>
+</VBox>

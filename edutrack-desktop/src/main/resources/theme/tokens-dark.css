@@ -1,0 +1,34 @@
+/*
+ * EduTrack design tokens — dark.
+ * Same identity as light: neutrals invert, the accent keeps its hue and is lifted for contrast.
+ */
+.root {
+    -et-accent: #7C93D1;
+    -et-accent-muted: rgba(124, 147, 209, 0.40);
+    -et-accent-subtle: rgba(124, 147, 209, 0.10);
+    -et-on-accent: #0F1115;                       /* dark text on the lifted accent (≈7:1) */
+
+    -et-text: #E5E7EB;
+    -et-text-muted: #9CA3AF;
+    -et-border: #2A2F38;
+    -et-background: #0F1115;
+    -et-surface: #16191F;
+
+    -et-danger: #E08A8A;
+}
+
+/* Highlight colours: tint behind edited text, ink for read-only text and the colour swatches. */
+.root {
+    -et-hl-yellow: rgba(250, 204, 21, 0.30);
+    -et-hl-yellow-ink: #FACC15;
+    -et-hl-green: rgba(74, 222, 128, 0.28);
+    -et-hl-green-ink: #4ADE80;
+    -et-hl-blue: rgba(96, 165, 250, 0.30);
+    -et-hl-blue-ink: #60A5FA;
+    -et-hl-pink: rgba(244, 114, 182, 0.30);
+    -et-hl-pink-ink: #F472B6;
+    -et-hl-orange: rgba(251, 146, 60, 0.30);
+    -et-hl-orange-ink: #FB923C;
+    -et-hl-purple: rgba(192, 132, 252, 0.30);
+    -et-hl-purple-ink: #C084FC;
+}

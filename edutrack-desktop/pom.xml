@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.edutrack</groupId>
+        <artifactId>edutrack-parent</artifactId>
+        <version>0.1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>edutrack-desktop</artifactId>
+    <packaging>jar</packaging>
+    <name>EduTrack Desktop</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.edutrack</groupId>
+            <artifactId>edutrack-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.edutrack</groupId>
+            <artifactId>edutrack-infrastructure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.mkpaz</groupId>
+            <artifactId>atlantafx-base</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-javafx</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.kordamp.ikonli</groupId>
+            <artifactId>ikonli-feather-pack</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-gfm-tables</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-gfm-strikethrough</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-task-list-items</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.commonmark</groupId>
+            <artifactId>commonmark-ext-ins</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.fxmisc.richtext</groupId>
+            <artifactId>richtextfx</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.edutrack.desktop.Launcher</mainClass>
+                    <!-- WindowsTitleBar calls the Win32 API through the Foreign Function API -->
+                    <jvmArguments>--enable-native-access=ALL-UNNAMED</jvmArguments>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <!-- Same as above for `java -jar` (honoured in executable JAR manifests since JDK 22) -->
+                            <Enable-Native-Access>ALL-UNNAMED</Enable-Native-Access>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!--
+            Windows installer. Run: mvn -P installer -pl edutrack-desktop -am package -DskipTests
+            Needs the WiX Toolset (https://wixtoolset.org) on the PATH for the msi/exe types.
+            Without WiX, build a runnable folder instead: -Dinstaller.type=app-image -Dinstaller.extraArgs=
+            Output: edutrack-desktop/target/installer
+        -->
+        <profile>
+            <id>installer</id>
+            <properties>
+                <installer.type>msi</installer.type>
+                <installer.version>0.1.0</installer.version>
+                <!-- only valid for msi/exe; app-image builds pass -Dinstaller.extraArgs= (empty) -->
+                <installer.extraArgs>--win-menu --win-shortcut --win-dir-chooser --win-per-user-install</installer.extraArgs>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <id>jpackage</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <target>
+                                        <!-- jpackage input takes a folder; give it only the repackaged jar -->
+                                        <delete dir="${project.build.directory}/installer-input"/>
+                                        <delete dir="${project.build.directory}/installer"/>
+                                        <mkdir dir="${project.build.directory}/installer-input"/>
+                                        <copy file="${project.build.directory}/${project.build.finalName}.jar"
+                                              todir="${project.build.directory}/installer-input"/>
+                                        <exec executable="${java.home}/bin/jpackage" failonerror="true">
+                                            <arg value="--type"/>
+                                            <arg value="${installer.type}"/>
+                                            <arg value="--name"/>
+                                            <arg value="EduTrack"/>
+                                            <arg value="--app-version"/>
+                                            <arg value="${installer.version}"/>
+                                            <arg value="--vendor"/>
+                                            <arg value="EduTrack"/>
+                                            <arg value="--input"/>
+                                            <arg value="${project.build.directory}/installer-input"/>
+                                            <arg value="--main-jar"/>
+                                            <arg value="${project.build.finalName}.jar"/>
+                                            <arg value="--icon"/>
+                                            <arg value="${project.basedir}/src/main/resources/icons/app-icon.ico"/>
+                                            <arg value="--dest"/>
+                                            <arg value="${project.build.directory}/installer"/>
+                                            <arg value="--java-options"/>
+                                            <arg value="--enable-native-access=ALL-UNNAMED"/>
+                                            <arg line="${installer.extraArgs}"/>
+                                        </exec>
+                                    </target>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
